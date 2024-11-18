@@ -59,3 +59,9 @@ AO INICIAR:
     Encontrar tesouro
     Encontrar Cambista 
     Encontrar saída do labirinto
+
+
+MENUS:
+    menu_escolha
+
+    mensagens: "Quer ir para ESQUERDA ou DIREITA"
