@@ -40,7 +40,6 @@ AO INICIAR:
             Arma Secundária
 
 - O seu personagem pode:
-    Caminhar
     Equipar itens
     Usar itens
 
