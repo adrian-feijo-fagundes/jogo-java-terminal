@@ -45,3 +45,17 @@ AO INICIAR:
     Usar itens
 
 - Sistema de Combate
+    durante o combate:
+        atacar
+        usar habilidade
+        usar item
+        fugir
+
+- Sistema de escolhas e estrutura da história
+    O jogador pode escolher entre: DIREITA e ESQUERDA
+
+- Alguns eventos que podem acontecer:
+    Encontrar inimigo
+    Encontrar tesouro
+    Encontrar Cambista 
+    Encontrar saída do labirinto
