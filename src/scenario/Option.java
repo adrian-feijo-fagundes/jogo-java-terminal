@@ -1,3 +1,4 @@
+package scenario;
 public class Option {
     private String optionDescription;
     private Scene nextScene;
