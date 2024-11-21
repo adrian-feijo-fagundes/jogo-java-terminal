@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainCharacter extends Criatura {
+public class Player extends Criatura {
     private List<String> itensBag;
     private double gold;
-    public MainCharacter(int[] attributes) {
+    public Player(int[] attributes) {
         super(attributes);
         gold = 0;
         itensBag = new ArrayList<>();
