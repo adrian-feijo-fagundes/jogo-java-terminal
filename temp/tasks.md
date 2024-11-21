@@ -4,3 +4,7 @@
         Hunter
         Priest 
         Warrior
+
+    - Classe para rolar os dados
+    - Criar um sistema de combate
+    - Criar menus
