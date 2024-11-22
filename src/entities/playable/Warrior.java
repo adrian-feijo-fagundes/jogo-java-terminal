@@ -13,12 +13,12 @@ public class Warrior extends Player {
         super(
             name,
             "Guerreiro",
-            life,
-            attack,
-            mana,
-            defense,
-            speed,
-            luck
+            60,
+            20,
+            10,
+            15,
+            10,
+            5
         );
     }
     @Override
