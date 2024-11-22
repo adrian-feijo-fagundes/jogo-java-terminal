@@ -2,7 +2,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player extends Criatura implements Character{
+public class Player extends Creature implements Character{
     private List<String> itensBag;
     private double gold;
     public Player(int[] attributes) {
