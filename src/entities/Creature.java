@@ -26,5 +26,7 @@ public class Creature{
         this.speed = speed;
         this.luck = luck;
     }
-
+    public String getInfo() {
+        return "";
+    }
 }
