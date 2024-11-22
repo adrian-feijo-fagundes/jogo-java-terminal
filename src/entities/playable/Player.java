@@ -47,7 +47,7 @@ public class Player extends Creature implements Character{
     @Override
     public String getInfo() {
         String info = String.format(
-            "Classe: %s\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d\nDefesa: %d\nVelocidade: %d\nSorte: %d",
+            "\nClasse: %s\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d\nDefesa: %d\nVelocidade: %d\nSorte: %d",
             this.type,
             this.name,
             this.life,
