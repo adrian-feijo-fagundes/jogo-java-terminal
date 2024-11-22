@@ -1,6 +1,23 @@
-package entities;
+package entities.playable;
+
 public class Hunter extends Player {
-    public Hunter(int[] attributes) {
-        super(attributes);
+    public Hunter(
+        String name,
+        int life,
+        int attack,
+        int mana,
+        int defense,
+        int speed,
+        int luck
+    ) {
+        super(
+            name,
+            life,
+            attack,
+            mana,
+            defense,
+            speed,
+            luck
+        );
     }
 }

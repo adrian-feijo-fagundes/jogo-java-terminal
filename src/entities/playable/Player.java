@@ -6,12 +6,28 @@ import entities.Character;
 import entities.Creature;
 
 public class Player extends Creature implements Character{
-    private List<String> itensBag;
+    private List<String> playerInventory;
     private double gold;
-    public Player(int[] attributes) {
-        super(attributes);
+    public Player(
+        String name,
+        int life,
+        int attack,
+        int mana,
+        int defense,
+        int speed,
+        int luck
+    ) {
+        super(
+            name,
+            life,
+            attack,
+            mana,
+            defense,
+            speed,
+            luck
+        );
         gold = 0;
-        itensBag = new ArrayList<>();
+        playerInventory = new ArrayList<>();
     }
 
     public double getGold() {
