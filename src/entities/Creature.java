@@ -27,7 +27,7 @@ public class Creature implements Character{
         this.luck = luck;
     }
     @Override
-    public void attack() {}
+    public void attack(Creature other) {}
     @Override
     public void specialAttack() {}
     public void useItem() {}
