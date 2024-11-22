@@ -1,5 +1,5 @@
 package entities;
 public interface Character {
-    void attack();
+    void attack(Creature other);
     void specialAttack();
 }
