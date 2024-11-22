@@ -1,6 +1,6 @@
 package entities;
 
-public class Creature{
+public class Creature implements Character{
     public String name;
     public int life;
     public int attack;
@@ -26,7 +26,16 @@ public class Creature{
         this.speed = speed;
         this.luck = luck;
     }
+    @Override
+    public void attack() {}
+    @Override
+    public void specialAttack() {}
+    public void useItem() {}
     public String getInfo() {
         return "";
     }
+    public boolean run() {
+        return false;
+    }
+
 }
