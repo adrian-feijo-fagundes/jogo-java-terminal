@@ -1,6 +1,6 @@
 package entities;
 public class Warrior extends Player {
-    public Warrior(int[] attributes) {
-        super(attributes);
+    public Warrior(String nome) {
+        super(nome);
     }
 }

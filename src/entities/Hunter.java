@@ -1,6 +1,6 @@
 package entities;
 public class Hunter extends Player {
-    public Hunter(int[] attributes) {
-        super(attributes);
+    public Hunter(String nome) {
+        super(nome);
     }
 }

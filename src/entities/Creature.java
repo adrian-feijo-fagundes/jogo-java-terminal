@@ -1,6 +1,7 @@
 package entities;
 
 public class Creature{
+    private String nome;
     public int life;
     public int attack;
     public int mana;
@@ -8,13 +9,13 @@ public class Creature{
     public int speed;
     public int luck;
 
-    public Creature(int[] attributes) {
-        this.life = attributes[0];
-        this.attack = attributes[1];
-        this.mana = attributes[2];
-        this.defense = attributes[3];
-        this.speed = attributes[4];
-        this.luck = attributes[5];
+    public Creature(String nome,int life, int attack, int mana, int defense, int speed, int luck) {
+        this.nome = nome;
+        this.life = life;
+        this.attack = attack;
+        this.mana = mana;
+        this.defense = defense;
+        this.speed = speed;
+        this.luck = luck;
     }
-
 }

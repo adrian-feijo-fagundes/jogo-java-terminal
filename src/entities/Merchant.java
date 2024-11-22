@@ -1,6 +1,6 @@
 package entities;
 public class Merchant extends Player {
-    public Merchant(int[] attributes) {
-        super(attributes);
+    public Merchant(String nome) {
+        super(nome);
     }
 }
