@@ -12,6 +12,7 @@ public class Priest extends Player {
     ) {
         super(
             name,
+            "Sacerdote",
             life,
             attack,
             mana,

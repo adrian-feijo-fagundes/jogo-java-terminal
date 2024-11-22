@@ -12,6 +12,7 @@ public class Warrior extends Player {
     ) {
         super(
             name,
+            "Guerreiro",
             life,
             attack,
             mana,
@@ -23,7 +24,7 @@ public class Warrior extends Player {
     @Override
     public String getInfo() {
         String info = String.format(
-            "Nome do Personagem: %s\nHP: %d\nAtaque: %d\nMana: %d\nDefesa: %d\nVelocidade: %d\nSorte: %d",
+            "Classe: Guerreiro\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d\nDefesa: %d\nVelocidade: %d\nSorte: %d",
             this.name,
             this.life,
             this.attack,

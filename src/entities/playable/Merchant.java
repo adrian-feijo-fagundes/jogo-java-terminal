@@ -12,6 +12,7 @@ public class Merchant extends Player {
     ) {
         super(
             name,
+            "Mercador",
             life,
             attack,
             mana,
