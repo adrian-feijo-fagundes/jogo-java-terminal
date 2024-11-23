@@ -14,11 +14,11 @@ public class Priest extends Player {
             name,
             "Sacerdote",
             40 + life * 1,
-            8 + attack * 1,
-            50 + mana * 1,
-            10 + defense * 1,
-            12 + speed * 1,
-            10 + luck * 1
+            8  + (int) (attack * 0.8),
+            50 + (int) (mana * 1.5),
+            10 + (int) (defense * 1.1),
+            12 + (int) (speed * 1.3),
+            10 + (int) (luck * 1.2)
         );
     }
 }
