@@ -13,12 +13,12 @@ public class Priest extends Player {
         super(
             name,
             "Sacerdote",
-            40 + life,
-            8 + attack,
-            50 + mana,
-            10 + defense,
-            12 + speed,
-            10 + luck
+            40 + life * 1,
+            8 + attack * 1,
+            50 + mana * 1,
+            10 + defense * 1,
+            12 + speed * 1,
+            10 + luck * 1
         );
     }
 }

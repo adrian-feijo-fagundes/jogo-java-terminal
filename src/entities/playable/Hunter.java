@@ -13,12 +13,12 @@ public class Hunter extends Player {
         super(
             name,
             "Caçador",
-            45 + life,
-            15 + attack,
-            30 + mana,
-            15 + defense,
-            12 + speed,
-            10 + luck
+            45 + life * 1,
+            15 + attack * 1,
+            30 + mana * 1,
+            15 + defense * 1,
+            12 + speed * 1,
+            10 + luck * 1
         );
     }
 }
