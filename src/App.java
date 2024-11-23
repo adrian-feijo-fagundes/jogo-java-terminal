@@ -30,18 +30,32 @@ public class App {
         System.out.println("2. Sacerdorte");
         System.out.println("3. Guerreiro");
         System.out.println("4. Mercador");
-        
         System.out.println("Digite sua escolha"); 
+        int choice = sc.nextInt();
+        
+        System.out.println("\n Agora vamos rolar os dados para calcular os atributos do seu personagem");
+        System.out.println("\n Rolando dados para o HP (vida)");
+        System.out.println("\n Rolando dados para o MP (mana)");
+        System.out.println("\n Rolando dados para o ATK (ataque)");
+        System.out.println("\n Rolando dados para o DEF (defesa)");
+        System.out.println("\n Rolando dados para o SPD (velocidade)");
+        System.out.println("\n Rolando dados para o LUCK (sorte)");
+        int life = Dice.roll(sc, 3, 6);
+        int mana = Dice.roll(sc, 3, 6);
+        int attack = Dice.roll(sc, 2, 6);
+        int defense = Dice.roll(sc, 2, 6);
+        int speed = Dice.roll(sc, 2, 6);
+        int luck = Dice.roll(sc, 2, 6);
         do {
-            switch (sc.nextInt()) {
+            switch (choice) {
                 case 1:
-                    return new Hunter(name, 0,0,0,0,0,0);
+                    return new Hunter(name, life, attack, mana, defense, speed, luck);
                 case 2:
-                    return new Priest(name, 0,0,0,0,0,0);
+                    return new Priest(name, life, attack, mana, defense, speed, luck);
                 case 3:
-                    return new Warrior(name, 0,0,0,0,0,0);
+                    return new Warrior(name, life, attack, mana, defense, speed, luck);
                 case 4:
-                    return new Merchant(name, 0,0,0,0,0,0);
+                    return new Merchant(name, life, attack, mana, defense, speed, luck);
                 default:
                     System.out.println("Escolha uma opção válida");
                     break;
