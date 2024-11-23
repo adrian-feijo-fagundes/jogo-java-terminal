@@ -19,7 +19,7 @@ public class App {
         //
         // 
         //
-
+        sc.close();
     }
     public static Player createPlayer(Scanner sc) {
         System.out.println("\nQual o nome do seu Personagem?");
@@ -30,22 +30,41 @@ public class App {
         System.out.println("2. Sacerdorte");
         System.out.println("3. Guerreiro");
         System.out.println("4. Mercador");
-        
         System.out.println("Digite sua escolha"); 
-        do {
-            switch (sc.nextInt()) {
-                case 1:
-                    return new Hunter(name, 0,0,0,0,0,0);
-                case 2:
-                    return new Priest(name, 0,0,0,0,0,0);
-                case 3:
-                    return new Warrior(name, 0,0,0,0,0,0);
-                case 4:
-                    return new Merchant(name, 0,0,0,0,0,0);
-                default:
-                    System.out.println("Escolha uma opção válida");
-                    break;
-            }    
-        } while (true);     
+        int choice = sc.nextInt();
+        while (choice < 1 || choice > 4) {
+            System.out.println("Escolha uma opção válida");
+            choice = sc.nextInt();
+        }
+        System.out.println("\nAgora vamos rolar os dados para calcular os atributos do seu personagem");
+        System.out.println("\nRolando dados para o HP (vida)");
+        int life = Dice.roll(sc, 3, 6);
+        System.out.println("\nRolando dados para o MP (mana)");
+        int mana = Dice.roll(sc, 3, 6);
+        System.out.println("\nRolando dados para o ATK (ataque)");
+        int attack = Dice.roll(sc, 2, 6);
+        System.out.println("\nRolando dados para o DEF (defesa)");
+        int defense = Dice.roll(sc, 2, 6);
+        System.out.println("\nRolando dados para o SPD (velocidade)");
+        int speed = Dice.roll(sc, 2, 6);
+        System.out.println("\nRolando dados para o LUCK (sorte)");
+        int luck = Dice.roll(sc, 2, 6);
+        Player player = null;
+        switch (choice) {
+            case 1:
+                player = new Hunter(name, life, attack, mana, defense, speed, luck);
+                break;
+            case 2:
+                player = new Priest(name, life, attack, mana, defense, speed, luck);
+                break;
+            case 3:
+                player = new Warrior(name, life, attack, mana, defense, speed, luck);
+                break;
+            case 4:
+                player = new Merchant(name, life, attack, mana, defense, speed, luck);
+                break;
+        
+        }
+        return player;         
     }
 }

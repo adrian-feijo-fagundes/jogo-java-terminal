@@ -31,8 +31,7 @@ public class Scene {
         System.out.println(description);
     }
 
-    public void startEvent(Creature player, Creature enemy) {
-        Scanner sc = new Scanner(System.in);
+    public void startEvent(Scanner sc, Creature player, Creature enemy) {
         System.out.println("Combate Iniciou");
         boolean combat = true;
         do {
