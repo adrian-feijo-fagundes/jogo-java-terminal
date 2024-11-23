@@ -13,12 +13,12 @@ public class Merchant extends Player {
         super(
             name,
             "Mercador",
-            50,
-            10,
-            50,
-            10,
-            8,
-            15
+            50 + life,
+            10 + attack,
+            50 + mana,
+            10 + defense,
+            8 + speed,
+            15 + luck
         );
     }
 }

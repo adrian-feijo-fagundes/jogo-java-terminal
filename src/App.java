@@ -35,16 +35,16 @@ public class App {
         
         System.out.println("\n Agora vamos rolar os dados para calcular os atributos do seu personagem");
         System.out.println("\n Rolando dados para o HP (vida)");
-        System.out.println("\n Rolando dados para o MP (mana)");
-        System.out.println("\n Rolando dados para o ATK (ataque)");
-        System.out.println("\n Rolando dados para o DEF (defesa)");
-        System.out.println("\n Rolando dados para o SPD (velocidade)");
-        System.out.println("\n Rolando dados para o LUCK (sorte)");
         int life = Dice.roll(sc, 3, 6);
+        System.out.println("\n Rolando dados para o MP (mana)");
         int mana = Dice.roll(sc, 3, 6);
+        System.out.println("\n Rolando dados para o ATK (ataque)");
         int attack = Dice.roll(sc, 2, 6);
+        System.out.println("\n Rolando dados para o DEF (defesa)");
         int defense = Dice.roll(sc, 2, 6);
+        System.out.println("\n Rolando dados para o SPD (velocidade)");
         int speed = Dice.roll(sc, 2, 6);
+        System.out.println("\n Rolando dados para o LUCK (sorte)");
         int luck = Dice.roll(sc, 2, 6);
         do {
             switch (choice) {
