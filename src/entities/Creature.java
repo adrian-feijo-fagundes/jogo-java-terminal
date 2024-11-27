@@ -1,7 +1,7 @@
 package entities;
 
-public class Creature implements Character{
-    public String name;
+public class Creature implements Character , Entity{
+    private String name;
     public int life;
     public int attack;
     public int mana;
@@ -37,5 +37,8 @@ public class Creature implements Character{
     public boolean run() {
         return false;
     }
-
+    @Override
+    public String getName() {
+        return this.name;
+    }
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import entities.Creature;
+import entities.Entity;
 
 
 public class Scene {
@@ -27,9 +27,8 @@ public class Scene {
         this.options.add(new Option(optionDescription, nextScene));
     }
 
-    public void startEvent() {
+    public void startEvent(Scanner sc, Entity[] objects) {
         System.out.println(description);
     }
 
-    
 }
