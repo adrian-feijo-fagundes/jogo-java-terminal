@@ -25,7 +25,7 @@ public class Warrior extends Player {
     public String getInfo() {
         String info = String.format(
             "Classe: Guerreiro\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d\nDefesa: %d\nVelocidade: %d\nSorte: %d",
-            this.name,
+            this.getName(),
             this.life,
             this.attack,
             this.mana,
