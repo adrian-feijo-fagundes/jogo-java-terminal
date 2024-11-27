@@ -2,14 +2,14 @@ package scenario;
 
 import java.util.Scanner;
 
-import entities.Entity;
+import interfaces.Entity;
 
 public class Combat extends Scene {
     
     public Combat(String description) {
         super(description);
     }
-    
+
     @Override
     public void startEvent(Scanner sc, Entity[] objects) {
         System.out.println("Combate Iniciou");

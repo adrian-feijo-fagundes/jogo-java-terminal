@@ -1,5 +1,8 @@
 package entities;
 
+import interfaces.Character;
+import interfaces.Entity;
+
 public class Creature implements Character , Entity{
     private String name;
     public int life;
