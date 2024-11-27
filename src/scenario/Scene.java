@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import entities.Entity;
+import interfaces.Entity;
 
 
 public class Scene {
