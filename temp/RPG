@@ -24,25 +24,11 @@ AO INICIAR:
 
     O personagem tambem possui:
         Dinheiro
-        Equipamentos para:
-            Cabeça
-            Peitoral
-            Calças
-            Calcados
-            Acessório
-            Arma principal
-            Arma Secundária
+        Equipamentos 
 
 - O seu personagem pode:
     Equipar itens
     Usar itens
-
-- Sistema de Combate
-    durante o combate:
-        atacar
-        usar habilidade
-        usar item
-        fugir
 
 - Sistema de escolhas e estrutura da história
     O jogador pode escolher entre: DIREITA e ESQUERDA
