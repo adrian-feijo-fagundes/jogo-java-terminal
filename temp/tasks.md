@@ -15,5 +15,5 @@
         - Sistema de combate
         - Sistema de cenas
         - Eventos de encontrar item
-        - Eventoa de loja
+        - Eventos de loja
          
