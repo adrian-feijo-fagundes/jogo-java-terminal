@@ -1,10 +1,10 @@
 package entities;
 
 import interfaces.Character;
-import interfaces.Entity;
+import utils.Dice;
+import utils.Entity;
 
-public class Creature implements Character , Entity{
-    private String name;
+public class Creature extends Entity implements Character{
     public int life;
     public int attack;
     public int mana;
@@ -21,27 +21,67 @@ public class Creature implements Character , Entity{
         int speed,
         int luck
     ) {
-        this.name = name;
+        super(name);
         this.life = life;
         this.attack = attack;
         this.mana = mana;
         this.defense = defense;
         this.speed = speed;
         this.luck = luck;
-    }
+    } 
     @Override
-    public void attack(Creature other) {}
-    @Override
-    public void specialAttack() {}
-    public void useItem() {}
-    public String getInfo() {
-        return "";
+    public void specialAttack() {
+
     }
+    
+    public void useItem() {
+
+    }
+
     public boolean run() {
         return false;
     }
+    // Metodo encarregado de "Medir" quanto os atributos do inimigo influenciam na chance de esquiva do mesmo
+    public int calcDifficult() {
+        return ((int) (this.luck * 0.5)) + ((int) (this.speed * 0.5));
+    }
+
+    // Calcula se a esquiva aconteceu
+    public boolean dodge(int difficulty) {
+        int dodgeChance = 100 - (((int) (this.luck * 0.4)) + ((int) (this.speed * 0.6)) - difficulty);
+
+        int result = Dice.simpleRoll(10) * 10;
+        System.out.println("O dado foi jogado e o resultado obtido foi " + result + " pontos (resultado do dado multiplicado por 10)");
+        System.out.println("Para desviar do golpe era necessário conseguir pelo menos "+ dodgeChance + " pontos");
+        
+        boolean dodge = result >= dodgeChance;
+
+        if (dodge) {
+            System.out.println(this.getName() + "Conseguiu esquivar!");
+        } else {
+            System.out.println(this.getName() + "Não conseguiu esquivar!");
+        }
+        return dodge;
+    }
+
+    public int criticalHit() {
+        return 1;
+    }
+
     @Override
-    public String getName() {
-        return this.name;
+    public void attack(Creature other) {
+        int critical = this.criticalHit();
+        
+        // Verifica se o oponente esquivou
+        if (other.dodge(this.calcDifficult())) return;
+        
+        other.life -= (this.attack * this.criticalHit());
+        
+        if (critical > 1) {
+            System.out.println("Acertou um ataque crítico");
+        }
+    }
+    public String getInfo() {
+        return "";
     }
 }
