@@ -1,10 +1,3 @@
-## Concluído
-    - Criação básica de personagens
-    - Metodo attack
-    - Metodo dodge
-    - Metodo criticalHit
-    - Metodo calcDifficult
-
 ## Estruturar melhor o sistema do jogo
         - Sistema de combate
         - Sistema de cenas
