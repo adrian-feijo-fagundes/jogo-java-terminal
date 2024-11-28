@@ -13,25 +13,30 @@
 
 ## Sistema de combate
 
-atacar
-habilidade especial
-fugir 
-usar item 
+### Opções do Jogador
+    - Atacar
+    - Usar habilidade
+    - Fugir 
+    - Usar item 
 
-- calcular se foi um acerto critico
-- esquiva
+### Ciclo da Batalha
 
-ataco primeiro?
-inimigo esquivou?
-foi um acerto critico?
+    - Verificar quem ataca primeiro
+    - Criatura com priopridade ataca primeiro
+    - SE Houve esquiva
+            - Criatura sem prioridade ataca 
+    
+    -  senão
+            - Criatura ataca
+                    - Verifica Critico
+                    - Ataca
+
+    - SE Criatura sem prioridade está viva
+            - Criatura sem prioridade ataca
+    
+    - SE alguem morreu ou Jogador conseguiu fugir
+            - Encerrar batalha
 
 batalhar:
-	primeiramente verifica o mais rápido
-	verifica se aconteceu uma esquiva
-	verifica se é critico
-	então o mais rapido ataca
-	se o oponente sobreviver o oponente ataca
-	o combate acontece enquanto alguem estiver vivo, ou 		não conseguir fugir
-
 ## Outros: 
     - sortudo
