@@ -21,22 +21,21 @@
 
 ### Ciclo da Batalha
 
-    - Verificar quem ataca primeiro
-    - Criatura com priopridade ataca primeiro
-    - SE Houve esquiva
-            - Criatura sem prioridade ataca 
-    
-    -  senão
-            - Criatura ataca
-                    - Verifica Critico
-                    - Ataca
+- Verificar quem ataca primeiro
+    - Criatura com priopridade ataca primeiro    
 
-    - SE Criatura sem prioridade está viva
-            - Criatura sem prioridade ataca
-    
-    - SE alguem morreu ou Jogador conseguiu fugir
-            - Encerrar batalha
+- SENÃO
+   - Criatura ataca
+   - Verificar se oponente esquivou
+   - Verifica Critico
+   - Ataca
+
+- SE Criatura sem prioridade está viva
+   - Criatura sem prioridade ataca
+
+- SE alguem morreu ou Jogador conseguiu fugir
+   - Encerrar batalha
 
 batalhar:
 ## Outros: 
-    - sortudo
+ - sortudo
