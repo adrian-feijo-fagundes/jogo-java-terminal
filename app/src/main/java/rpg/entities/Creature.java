@@ -1,8 +1,9 @@
-package entities;
+package rpg.entities;
 
-import interfaces.Character;
 import utils.Dice;
 import utils.Entity;
+import rpg.interfaces.Character;
+
 
 public class Creature extends Entity implements Character{
     public int life;

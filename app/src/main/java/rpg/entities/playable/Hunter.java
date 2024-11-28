@@ -1,4 +1,4 @@
-package entities.playable;
+package rpg.entities.playable;
 
 public class Hunter extends Player {
     public Hunter(

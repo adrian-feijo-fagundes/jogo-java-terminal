@@ -1,4 +1,4 @@
-package scenario;
+package rpg.scenario;
 public class Option {
     private String optionDescription;
     private Scene nextScene;

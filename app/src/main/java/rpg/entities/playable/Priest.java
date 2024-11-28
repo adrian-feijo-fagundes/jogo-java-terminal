@@ -1,4 +1,4 @@
-package entities.playable;
+package rpg.entities.playable;
 
 public class Priest extends Player {
     public Priest(

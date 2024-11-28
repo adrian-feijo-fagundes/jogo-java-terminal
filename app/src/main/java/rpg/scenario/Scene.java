@@ -1,14 +1,14 @@
-package scenario;
+package rpg.scenario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import interfaces.Entity;
+import utils.Entity;
 
 
 public class Scene {
-    private String description;
-    private List<Option> options;
+    private final String description;
+    private final List<Option> options;
 
     public Scene(String description) {
         this.description = description;

@@ -1,8 +1,8 @@
-package scenario;
+package rpg.scenario;
 
 import java.util.Scanner;
 
-import interfaces.Entity;
+import utils.Entity;
 
 public class Combat extends Scene {
     

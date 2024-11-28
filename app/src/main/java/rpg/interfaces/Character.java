@@ -1,6 +1,6 @@
-package interfaces;
+package rpg.interfaces;
 
-import entities.Creature;
+import rpg.entities.Creature;
 
 public interface Character {
     void attack(Creature other);

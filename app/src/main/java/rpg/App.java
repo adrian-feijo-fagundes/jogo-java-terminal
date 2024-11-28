@@ -5,6 +5,7 @@ import entities.playable.Merchant;
 import entities.playable.Player;
 import entities.playable.Priest;
 import entities.playable.Warrior;
+import utils.Dice;
 
 public class App {
     public static void main(String[] args) {
@@ -63,7 +64,6 @@ public class App {
             case 4:
                 player = new Merchant(name, life, attack, mana, defense, speed, luck);
                 break;
-        
         }
         return player;         
     }
