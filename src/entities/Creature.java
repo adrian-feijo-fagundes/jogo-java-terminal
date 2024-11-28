@@ -64,9 +64,19 @@ public class Creature extends Entity implements Character{
         return dodge;
     }
 
+
     public int criticalHit() {
-        return 1;
+        //if (this.hasCriticalBonusItem()) { // Exemplo: item ou buff que aumenta a chance
+        //        criticalChance += 15; // Aumenta a chance em 15% (ajuste conforme necessário)
+        //}
+        int randomValue = (int) (Math.random() * 100) + 1;
+        
+        if (randomValue <= this.luck) {
+            return 2; // Multiplicador crítico
+        }
+        return 1; // Ataque normal
     }
+        
 
     @Override
     public void attack(Creature other) {

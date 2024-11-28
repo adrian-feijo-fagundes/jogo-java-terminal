@@ -1,0 +1,87 @@
+Sistema de combate
+
+atacar
+habilidade especial
+fugir 
+usar item 
+
+
+atacar
+
+- calcular quem ataca primeiro
+	quem tem mais velocidade ataca primeiro
+
+- calcular se foi um acerto critico
+	cada 2 de sorte é 1% de critico 	
+
+- calcular se o golpe acertou
+	sorte + velocidade
+
+	a sorte reduz a chance de errar
+	maior velocidade aumenta a chance de acertar
+
+- esquiva
+
+ataco primeiro?
+inimigo esquivou?
+foi um acerto critico?
+
+batalhar:
+	primeiramente verifica o mais rápido
+	verifica se aconteceu uma esquiva
+	verifica se é critico
+	então o mais rapido ataca
+		
+	se o oponente sobreviver o oponente ataca
+
+
+	o combate acontece enquanto alguem estiver vivo, ou 		não conseguir fugir
+
+
+
+
+p.attack(other) {
+	if (!other.esquivou()) return
+	other.life -= (p.attack * p.acertoCritico())		
+}
+
+
+sortudo
+
+
+como vai funcionar a esquiva?
+
+
+
+tirar status de defesa
+
+function calcularDificuldade(sorteInimigo, velocidadeInimigo, distancia, condicao) {
+    return (sorteInimigo * 0.5) + (velocidadeInimigo * 0.5) + distancia + condicao;
+}
+
+function calcularEsquiva(sorteJogador, velocidadeJogador, dificuldade) {
+    const chanceBase = (sorteJogador * 0.4) + (velocidadeJogador * 0.6) - dificuldade;
+    const dado = Math.random() * 100;
+    return dado <= chanceBase;
+}
+
+// Exemplo de ataque
+const sorteInimigo = 40;
+const velocidadeInimigo = 60;
+const distancia = 10; // Curta distância
+const condicao = 10; // Nevoeiro
+
+const dificuldade = calcularDificuldade(sorteInimigo, velocidadeInimigo, distancia, condicao);
+
+// Atributos do jogador
+const sorteJogador = 60;
+const velocidadeJogador = 80;
+
+if (calcularEsquiva(sorteJogador, velocidadeJogador, dificuldade)) {
+    console.log("Esquiva bem-sucedida!");
+} else {
+    console.log("O ataque acertou!");
+}
+
+
+
