@@ -47,8 +47,13 @@ public class Combat extends Scene {
                     // enemy.attack(player);
                     break;
                 case 4:
-                    System.out.println("Fugiu!");
-                    // if (player.run()) combat = false;
+                    if (player.run()) {
+                        System.out.println("Conseguiu fugir!");
+                        combat = false;
+                    } else {
+                        System.out.println("Não conseguiu fugir!");
+                        creature.attack(player);
+                    }
                     break;
                 default:
                     System.out.println("Escolha uma opção valida");

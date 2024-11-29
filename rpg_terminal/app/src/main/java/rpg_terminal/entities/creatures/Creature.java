@@ -38,7 +38,9 @@ public class Creature extends Entity implements Character {
     }
 
     public boolean run() {
-        return false;
+        int runChance = 75;
+        int roll = 10;
+        return roll <= runChance;
     }
 
     // Metodo encarregado de "Medir" quanto os atributos do inimigo influenciam na
