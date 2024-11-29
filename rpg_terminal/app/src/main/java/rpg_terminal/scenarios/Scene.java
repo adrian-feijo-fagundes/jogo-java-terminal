@@ -1,8 +1,10 @@
-package rpg_terminal;
+package rpg_terminal.scenarios;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import rpg_terminal.entities.Entity;
 
 public class Scene {
     private final String description;

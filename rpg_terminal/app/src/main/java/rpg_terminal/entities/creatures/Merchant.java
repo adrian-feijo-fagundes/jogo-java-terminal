@@ -1,4 +1,4 @@
-package rpg_terminal;
+package rpg_terminal.entities.creatures;
 
 public class Merchant extends Player {
     public Merchant(

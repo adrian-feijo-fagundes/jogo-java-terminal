@@ -1,4 +1,4 @@
-package rpg_terminal;
+package rpg_terminal.entities;
 
 public class Entity{
     private String name; 

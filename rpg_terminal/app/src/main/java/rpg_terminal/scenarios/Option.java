@@ -1,4 +1,4 @@
-package rpg_terminal;
+package rpg_terminal.scenarios;
 
 public class Option {
     private String optionDescription;

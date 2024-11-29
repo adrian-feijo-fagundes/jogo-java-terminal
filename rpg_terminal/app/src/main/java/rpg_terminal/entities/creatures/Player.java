@@ -1,4 +1,4 @@
-package rpg_terminal;
+package rpg_terminal.entities.creatures;
 
 import java.util.ArrayList;
 import java.util.List;

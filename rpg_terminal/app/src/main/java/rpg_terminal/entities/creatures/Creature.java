@@ -1,4 +1,7 @@
-package rpg_terminal;
+package rpg_terminal.entities.creatures;
+
+import rpg_terminal.Dice;
+import rpg_terminal.entities.Entity;
 
 public class Creature extends Entity implements Character {
     public int life;

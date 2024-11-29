@@ -2,6 +2,12 @@ package rpg_terminal;
 
 import java.util.Scanner;
 
+import rpg_terminal.entities.creatures.Hunter;
+import rpg_terminal.entities.creatures.Merchant;
+import rpg_terminal.entities.creatures.Player;
+import rpg_terminal.entities.creatures.Priest;
+import rpg_terminal.entities.creatures.Warrior;
+
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

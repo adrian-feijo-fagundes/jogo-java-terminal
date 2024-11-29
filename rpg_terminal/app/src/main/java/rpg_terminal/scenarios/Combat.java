@@ -1,6 +1,8 @@
-package rpg_terminal;
+package rpg_terminal.scenarios;
 
 import java.util.Scanner;
+
+import rpg_terminal.entities.Entity;
 
 
 
