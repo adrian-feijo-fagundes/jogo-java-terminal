@@ -3,7 +3,6 @@ package rpg_terminal.scenarios;
 import java.util.Scanner;
 
 import rpg_terminal.entities.creatures.Creature;
-import rpg_terminal.entities.creatures.Player;
 
 public class Combat extends Scene {
     private Creature creature;
@@ -14,7 +13,7 @@ public class Combat extends Scene {
     }
 
     @Override
-    public void startEvent(Scanner sc, Player player) {
+    public void startEvent(Scanner sc, Creature player) {
         System.out.println("Combate Iniciou");
         boolean combat = true;
         do {

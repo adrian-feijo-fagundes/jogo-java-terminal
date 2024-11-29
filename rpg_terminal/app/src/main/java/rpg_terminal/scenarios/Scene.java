@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import rpg_terminal.entities.creatures.Player;
+import rpg_terminal.entities.creatures.Creature;
 
 public class Scene {
     private final String description;
@@ -27,7 +27,7 @@ public class Scene {
         this.options.add(new Option(optionDescription, nextScene));
     }
 
-    public void startEvent(Scanner sc, Player player) {
+    public void startEvent(Scanner sc, Creature player) {
         System.out.println(description);
     }
 

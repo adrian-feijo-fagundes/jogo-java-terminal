@@ -2,27 +2,33 @@ package rpg_terminal;
 
 import java.util.Scanner;
 
+import rpg_terminal.entities.creatures.Creature;
 import rpg_terminal.entities.creatures.Hunter;
 import rpg_terminal.entities.creatures.Merchant;
 import rpg_terminal.entities.creatures.Player;
 import rpg_terminal.entities.creatures.Priest;
 import rpg_terminal.entities.creatures.Warrior;
 
+import rpg_terminal.scenarios.Scene;
+import rpg_terminal.scenarios.Combat;
+
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        var player = createPlayer(sc);
+        // var player = createPlayer(sc);
         // Perguntar nome do personagem
-        System.out.println(player.getInfo());
+        // System.out.println(player.getInfo());
 
-        // Perguntar classe do personagem
-        // Calcular o poder do personagem rolando os dados
-        //
-        // 
-        //
+        // test combate
+        Creature enemy = new Creature("Orc", 100, 40, 0, 0, 30, 10);
+        Creature player = new Warrior("Guerreiro", 10, 10, 0, 0, 30, 0);
+        Scene battleOne = new Combat("", enemy);
+
+        battleOne.startEvent(sc, player);
         sc.close();
     }
+
     public static Player createPlayer(Scanner sc) {
         System.out.println("\nQual o nome do seu Personagem?");
 
@@ -32,7 +38,7 @@ public class App {
         System.out.println("2. Sacerdorte");
         System.out.println("3. Guerreiro");
         System.out.println("4. Mercador");
-        System.out.println("Digite sua escolha"); 
+        System.out.println("Digite sua escolha");
         int choice = sc.nextInt();
         while (choice < 1 || choice > 4) {
             System.out.println("Escolha uma opção válida");
@@ -58,6 +64,6 @@ public class App {
             case 3 -> player = new Warrior(name, life, attack, mana, defense, speed, luck);
             case 4 -> player = new Merchant(name, life, attack, mana, defense, speed, luck);
         }
-        return player;         
+        return player;
     }
 }
