@@ -1,11 +1,9 @@
-package rpg.entities;
+package rpg_terminal.entities.creatures;
 
-import utils.Dice;
-import utils.Entity;
-import rpg.interfaces.Character;
+import rpg_terminal.Dice;
+import rpg_terminal.entities.Entity;
 
-
-public class Creature extends Entity implements Character{
+public class Creature extends Entity implements Character {
     public int life;
     public int attack;
     public int mana;

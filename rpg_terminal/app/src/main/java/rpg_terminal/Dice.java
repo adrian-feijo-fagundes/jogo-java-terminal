@@ -1,4 +1,5 @@
-package utils;
+package rpg_terminal;
+
 import java.util.Scanner;
 
 public abstract class Dice {

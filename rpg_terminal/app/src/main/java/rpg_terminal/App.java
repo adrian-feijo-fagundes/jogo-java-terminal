@@ -1,17 +1,18 @@
+package rpg_terminal;
+
 import java.util.Scanner;
 
-import entities.playable.Hunter;
-import entities.playable.Merchant;
-import entities.playable.Player;
-import entities.playable.Priest;
-import entities.playable.Warrior;
-import utils.Dice;
+import rpg_terminal.entities.creatures.Hunter;
+import rpg_terminal.entities.creatures.Merchant;
+import rpg_terminal.entities.creatures.Player;
+import rpg_terminal.entities.creatures.Priest;
+import rpg_terminal.entities.creatures.Warrior;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Player player = createPlayer(sc);
+        var player = createPlayer(sc);
         // Perguntar nome do personagem
         System.out.println(player.getInfo());
 
@@ -52,18 +53,10 @@ public class App {
         int luck = Dice.roll(sc, 2, 6);
         Player player = null;
         switch (choice) {
-            case 1:
-                player = new Hunter(name, life, attack, mana, defense, speed, luck);
-                break;
-            case 2:
-                player = new Priest(name, life, attack, mana, defense, speed, luck);
-                break;
-            case 3:
-                player = new Warrior(name, life, attack, mana, defense, speed, luck);
-                break;
-            case 4:
-                player = new Merchant(name, life, attack, mana, defense, speed, luck);
-                break;
+            case 1 -> player = new Hunter(name, life, attack, mana, defense, speed, luck);
+            case 2 -> player = new Priest(name, life, attack, mana, defense, speed, luck);
+            case 3 -> player = new Warrior(name, life, attack, mana, defense, speed, luck);
+            case 4 -> player = new Merchant(name, life, attack, mana, defense, speed, luck);
         }
         return player;         
     }

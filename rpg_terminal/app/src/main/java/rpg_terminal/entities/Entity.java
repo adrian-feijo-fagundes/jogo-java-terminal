@@ -1,6 +1,6 @@
-package utils;
+package rpg_terminal.entities;
 
-public class Entity {
+public class Entity{
     private String name; 
 
     public Entity(String name) {
