@@ -1,4 +1,5 @@
-package rpg;
+package rpg_terminal;
+
 public class Hunter extends Player {
     public Hunter(
         String name,

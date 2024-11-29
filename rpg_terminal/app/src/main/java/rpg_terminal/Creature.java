@@ -1,6 +1,6 @@
-package rpg;
+package rpg_terminal;
 
-public class Creature extends Entidade {
+public class Creature extends Entity implements Character {
     public int life;
     public int attack;
     public int mana;

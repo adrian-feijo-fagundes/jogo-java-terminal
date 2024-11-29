@@ -1,4 +1,4 @@
-package rpg;
+package rpg_terminal;
 
 public class Warrior extends Player {
     public Warrior(

@@ -1,9 +1,7 @@
-package rpg;
+package rpg_terminal;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class Player extends Creature {
     private List<String> playerInventory;

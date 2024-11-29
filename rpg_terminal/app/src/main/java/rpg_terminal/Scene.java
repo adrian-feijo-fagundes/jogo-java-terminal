@@ -1,10 +1,8 @@
+package rpg_terminal;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-
-
 
 public class Scene {
     private final String description;

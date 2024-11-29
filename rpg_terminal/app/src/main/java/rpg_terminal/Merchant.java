@@ -1,4 +1,4 @@
-package rpg;
+package rpg_terminal;
 
 public class Merchant extends Player {
     public Merchant(
