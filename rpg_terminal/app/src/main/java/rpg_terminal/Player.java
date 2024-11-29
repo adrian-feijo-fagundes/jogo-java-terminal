@@ -1,8 +1,9 @@
-package rpg.entities.playable;
+package rpg;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import rpg.entities.Creature;
+
 
 public class Player extends Creature {
     private List<String> playerInventory;

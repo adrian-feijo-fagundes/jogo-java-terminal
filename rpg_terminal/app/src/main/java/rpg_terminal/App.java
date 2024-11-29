@@ -1,11 +1,6 @@
-import java.util.Scanner;
+package rpg;
 
-import entities.playable.Hunter;
-import entities.playable.Merchant;
-import entities.playable.Player;
-import entities.playable.Priest;
-import entities.playable.Warrior;
-import utils.Dice;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {

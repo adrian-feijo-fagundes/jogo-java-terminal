@@ -1,9 +1,9 @@
-package utils;
+package rpg;
 
-public class Entity {
+public class Entidade{
     private String name; 
 
-    public Entity(String name) {
+    public Entidade(String name) {
         this.name = name;
     }
     
