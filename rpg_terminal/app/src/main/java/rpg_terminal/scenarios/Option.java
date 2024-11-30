@@ -12,7 +12,7 @@ public class Option {
     public String getOptionDescription() {
         return optionDescription;
     }
-    
+
     public Scene getNextScene() {
         return nextScene;
     }
