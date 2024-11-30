@@ -1,5 +1,6 @@
 package rpg_terminal;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import rpg_terminal.entities.creatures.Creature;
@@ -10,6 +11,7 @@ import rpg_terminal.entities.creatures.Priest;
 import rpg_terminal.entities.creatures.Warrior;
 
 import rpg_terminal.scenarios.Scene;
+
 import rpg_terminal.scenarios.Combat;
 
 public class App {
@@ -20,12 +22,15 @@ public class App {
         // Perguntar nome do personagem
         // System.out.println(player.getInfo());
 
-        // test combate
-        Creature enemy = new Creature("Orc", 100, 40, 0, 0, 30, 10);
-        Creature player = new Warrior("Guerreiro", 10, 10, 0, 0, 30, 0);
-        Scene battleOne = new Combat("", enemy);
+        // // test combate
+        // Creature enemy = new Creature("Orc", 100, 40, 0, 0, 30, 10);
+        // Creature player = new Warrior("Guerreiro", 10, 40, 0, 0, 30, 0);
+        // Scene battleOne = new Combat("", enemy);
 
-        battleOne.startEvent(sc, player);
+        // battleOne.startEvent(sc, player);
+
+        Screen.clear();
+
         sc.close();
     }
 
@@ -65,5 +70,10 @@ public class App {
             case 4 -> player = new Merchant(name, life, attack, mana, defense, speed, luck);
         }
         return player;
+    }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }
