@@ -14,7 +14,6 @@ public class Player extends Creature {
             int life,
             int attack,
             int mana,
-            int defense,
             int speed,
             int luck) {
         super(
@@ -22,7 +21,6 @@ public class Player extends Creature {
                 life,
                 attack,
                 mana,
-                defense,
                 speed,
                 luck);
         this.type = type;
@@ -50,7 +48,6 @@ public class Player extends Creature {
                 this.life,
                 this.attack,
                 this.mana,
-                this.defense,
                 this.speed,
                 this.luck);
         return info;

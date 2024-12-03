@@ -56,18 +56,16 @@ public class App {
         int mana = Dice.roll(sc, 3, 6);
         System.out.println("\nRolando dados para o ATK (ataque)");
         int attack = Dice.roll(sc, 2, 6);
-        System.out.println("\nRolando dados para o DEF (defesa)");
-        int defense = Dice.roll(sc, 2, 6);
         System.out.println("\nRolando dados para o SPD (velocidade)");
         int speed = Dice.roll(sc, 2, 6);
         System.out.println("\nRolando dados para o LUCK (sorte)");
         int luck = Dice.roll(sc, 2, 6);
         Player player = null;
         switch (choice) {
-            case 1 -> player = new Hunter(name, life, attack, mana, defense, speed, luck);
-            case 2 -> player = new Priest(name, life, attack, mana, defense, speed, luck);
-            case 3 -> player = new Warrior(name, life, attack, mana, defense, speed, luck);
-            case 4 -> player = new Merchant(name, life, attack, mana, defense, speed, luck);
+            case 1 -> player = new Hunter(name, life, attack, mana, speed, luck);
+            case 2 -> player = new Priest(name, life, attack, mana, speed, luck);
+            case 3 -> player = new Warrior(name, life, attack, mana, speed, luck);
+            case 4 -> player = new Merchant(name, life, attack, mana, speed, luck);
         }
         return player;
     }

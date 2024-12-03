@@ -7,7 +7,6 @@ public class Creature extends Entity implements Character {
     public int life;
     public int attack;
     public int mana;
-    public int defense;
     public int speed;
     public int luck;
 
@@ -16,14 +15,12 @@ public class Creature extends Entity implements Character {
             int life,
             int attack,
             int mana,
-            int defense,
             int speed,
             int luck) {
         super(name);
         this.life = life;
         this.attack = attack;
         this.mana = mana;
-        this.defense = defense;
         this.speed = speed;
         this.luck = luck;
     }
