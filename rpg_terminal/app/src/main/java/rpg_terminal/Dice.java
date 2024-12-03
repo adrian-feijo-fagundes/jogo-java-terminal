@@ -29,7 +29,8 @@ public abstract class Dice {
         return total;
     }
 
-    public static int percent(Scanner sc) {
+    public static int percent() {
+        Scanner sc = new Scanner(System.in);
         message(null, 2);
         System.out.println("1 vez rolando o dado");
         System.out.println("Pressione Enter para rolar o d10");
@@ -51,6 +52,7 @@ public abstract class Dice {
         sc.nextLine();
         Screen.clear();
         int total = (r1 * 10) + r2;
+        sc.close();
         return total;
     }
 

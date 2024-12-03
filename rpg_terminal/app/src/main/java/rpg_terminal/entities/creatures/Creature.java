@@ -39,7 +39,7 @@ public class Creature extends Entity implements Character {
 
     public boolean run() {
         int runChance = 75;
-        int roll = 10;
+        int roll = Dice.percent();
         return roll <= runChance;
     }
 
@@ -70,11 +70,7 @@ public class Creature extends Entity implements Character {
     }
 
     public int criticalHit() {
-        // if (this.hasCriticalBonusItem()) { // Exemplo: item ou buff que aumenta a
-        // chance
-        // criticalChance += 15; // Aumenta a chance em 15% (ajuste conforme necessário)
-        // }
-        int randomValue = (int) (Math.random() * 100) + 1;
+        int randomValue = Dice.percent();
 
         if (randomValue <= this.luck) {
             return 2; // Multiplicador crítico
