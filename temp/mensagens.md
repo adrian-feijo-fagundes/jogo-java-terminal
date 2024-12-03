@@ -35,7 +35,3 @@ Orc conseguiu esquivar!
 ## APERTE ENTER PARA CONTINUAR
 
 `Screen.clear()`
-
-# HISTÓRIA
-
-Jogador nasce em uma sala, ele não sabe exatamente onde está
