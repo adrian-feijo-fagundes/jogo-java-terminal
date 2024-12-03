@@ -1,6 +1,5 @@
 package rpg_terminal;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import rpg_terminal.entities.creatures.Creature;
@@ -28,6 +27,7 @@ public class App {
         // Scene battleOne = new Combat("", enemy);
 
         // battleOne.startEvent(sc, player);
+        Dice.roll(sc, 6, 2);
 
         Screen.clear();
 
