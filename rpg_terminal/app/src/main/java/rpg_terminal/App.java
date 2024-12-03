@@ -17,17 +17,16 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // var player = createPlayer(sc);
+        var player = createPlayer(sc);
         // Perguntar nome do personagem
-        // System.out.println(player.getInfo());
-
+        System.out.println(player.getInfo());
+        sc.nextLine();
         // // test combate
         // Creature enemy = new Creature("Orc", 100, 40, 0, 0, 30, 10);
         // Creature player = new Warrior("Guerreiro", 10, 40, 0, 0, 30, 0);
         // Scene battleOne = new Combat("", enemy);
 
         // battleOne.startEvent(sc, player);
-        Dice.roll(sc, 6, 2);
 
         Screen.clear();
 
@@ -50,6 +49,7 @@ public class App {
             choice = sc.nextInt();
         }
         System.out.println("\nAgora vamos rolar os dados para calcular os atributos do seu personagem");
+        sc.nextLine();
         System.out.println("\nRolando dados para o HP (vida)");
         int life = Dice.roll(sc, 3, 6);
         System.out.println("\nRolando dados para o MP (mana)");

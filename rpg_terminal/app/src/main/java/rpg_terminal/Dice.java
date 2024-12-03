@@ -8,7 +8,7 @@ public abstract class Dice {
         return (int) (Math.random() * sides) + 1;
     }
 
-    public static int roll(Scanner sc, int sides, int timesToRoll) {
+    public static int roll(Scanner sc, int timesToRoll, int sides) {
         message(sc, timesToRoll);
         int total = 0;
         for (int i = 0; i < timesToRoll; i++) {
