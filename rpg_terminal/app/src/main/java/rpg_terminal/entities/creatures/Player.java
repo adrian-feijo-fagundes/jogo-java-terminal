@@ -1,10 +1,10 @@
 package rpg_terminal.entities.creatures;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 public class Player extends Creature {
-    private List<String> playerInventory;
+    // private List<String> playerInventory;
     private String type;
     private double gold;
 
@@ -25,7 +25,7 @@ public class Player extends Creature {
                 luck);
         this.type = type;
         gold = 0;
-        playerInventory = new ArrayList<>();
+        // playerInventory = new ArrayList<>();
     }
 
     public double getGold() {
@@ -42,7 +42,7 @@ public class Player extends Creature {
     @Override
     public String getInfo() {
         String info = String.format(
-                "\nClasse: %s\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d\nDefesa: %d\nVelocidade: %d\nSorte: %d",
+                "\nClasse: %s\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d \nVelocidade: %d\nSorte: %d",
                 this.type,
                 this.getName(),
                 this.life,

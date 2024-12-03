@@ -2,16 +2,16 @@ package rpg_terminal;
 
 import java.util.Scanner;
 
-import rpg_terminal.entities.creatures.Creature;
+//import rpg_terminal.entities.creatures.Creature;
 import rpg_terminal.entities.creatures.Hunter;
 import rpg_terminal.entities.creatures.Merchant;
 import rpg_terminal.entities.creatures.Player;
 import rpg_terminal.entities.creatures.Priest;
 import rpg_terminal.entities.creatures.Warrior;
 
-import rpg_terminal.scenarios.Scene;
+//import rpg_terminal.scenarios.Scene;
 
-import rpg_terminal.scenarios.Combat;
+//import rpg_terminal.scenarios.Combat;
 
 public class App {
     public static void main(String[] args) {
