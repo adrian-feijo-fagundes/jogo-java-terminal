@@ -6,6 +6,8 @@ import rpg_terminal.entities.creatures.playable.Hunter;
 import rpg_terminal.entities.creatures.playable.Merchant;
 import rpg_terminal.entities.creatures.playable.Player;
 import rpg_terminal.entities.creatures.playable.Warrior;
+import rpg_terminal.utils.Dice;
+import rpg_terminal.utils.Screen;
 
 //import rpg_terminal.scenarios.Scene;
 

@@ -1,4 +1,4 @@
-package rpg_terminal;
+package rpg_terminal.utils;
 
 public abstract class Screen {
     public static void clear() {

@@ -1,4 +1,4 @@
-package rpg_terminal;
+package rpg_terminal.utils;
 
 import java.util.Scanner;
 
