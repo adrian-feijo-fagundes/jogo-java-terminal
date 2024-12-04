@@ -1,16 +1,17 @@
-package rpg_terminal.entities.scenes;
+package rpg_terminal.managers;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import rpg_terminal.entities.creatures.Creature;
+import rpg_terminal.entities.scenes.Scene;
 
-public class SceneManager {
+public class Scenes {
     private List<Scene> scenes; // Lista que armazena todas as cenas
     private Scene currentScene; // Cena atual que está sendo exibida
 
-    public SceneManager() {
+    public Scenes() {
         scenes = new ArrayList<>();
         initializeScenes(); // Método para inicializar as cenas
     }
