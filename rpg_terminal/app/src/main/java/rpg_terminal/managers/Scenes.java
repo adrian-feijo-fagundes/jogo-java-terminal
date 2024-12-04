@@ -42,17 +42,16 @@ public class Scenes {
         salaPrincipalPortas.addOption("Investigar porta a esquerda", homemMisterioso);
         salaPrincipalPortas.addOption("Conversa", homemMisterioso);
         salaPrincipalPortas.addOption("Conversar com o homem", homemMisterioso);
-        
+
         // Adicionando as cenas na lista
         scenes.add(salaInicial);
         scenes.add(salaPrincipal);
         scenes.add(salaPrincipalPortas);
 
-        
         // Definindo a cena inicial
         this.currentScene = salaInicial;
     }
-        
+
     // Método para navegar pela cena atual e para a próxima cena
     public void startGame(Scanner sc, Creature player) {
         while (currentScene != null) {

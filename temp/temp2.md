@@ -79,16 +79,3 @@ Você decide que não há muito mais a fazer por enquanto. Sem olhar para trás,
 Essas mensagens mantêm o clima de mistério e reforçam a importância das escolhas do jogador. Se quiser ajustar o tom ou adicionar mais detalhes, é só dizer!
 
 package rpg_terminal.entities;
-
-public abstract class Entity {
-private final String id;
-
-    public Entity(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-}

@@ -11,17 +11,19 @@ public class Scene {
     private final List<String> messages;
     private final List<String> firstMessages;
     private final List<Option> options;
-    private final List<Option> firstOptions;
 
     public Scene() {
         this.messages = new ArrayList<>();
         this.firstMessages = new ArrayList<>();
         this.options = new ArrayList<>();
-        this.firstOptions = new ArrayList<>();
     }
 
     public List<String> getMessages() {
         return messages;
+    }
+
+    public List<String> getFirstMessages() {
+        return firstMessages;
     }
 
     public List<Option> getOptions() {
@@ -30,6 +32,18 @@ public class Scene {
 
     public void addOption(String optionDescription, Scene nextScene) {
         this.options.add(new Option(optionDescription, nextScene));
+    }
+
+    public void addMessages(String[] newMessages) {
+        for (String message : newMessages) {
+            this.messages.add(message);
+        }
+    }
+
+    public void addFirstMessages(String[] newFirstMessages) {
+        for (String message : newFirstMessages) {
+            this.firstMessages.add(message);
+        }
     }
 
     public Scene startEvent(Scanner sc, Creature player) {
