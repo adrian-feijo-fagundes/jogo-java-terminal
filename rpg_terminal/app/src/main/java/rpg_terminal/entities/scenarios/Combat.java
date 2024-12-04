@@ -1,4 +1,4 @@
-package rpg_terminal.scenarios;
+package rpg_terminal.entities.scenarios;
 
 import java.util.List;
 import java.util.Scanner;
