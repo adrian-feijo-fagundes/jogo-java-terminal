@@ -3,7 +3,7 @@ package rpg_terminal;
 import java.util.List;
 import java.util.Scanner;
 
-import rpg_terminal.entities.scenarios.Scene;
+import rpg_terminal.entities.scenes.Scene;
 
 public class TestingScenes {
     public static void main(String[] args) {

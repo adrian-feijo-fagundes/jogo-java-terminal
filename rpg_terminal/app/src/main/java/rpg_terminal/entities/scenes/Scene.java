@@ -1,4 +1,4 @@
-package rpg_terminal.entities.scenarios;
+package rpg_terminal.entities.scenes;
 
 import java.util.ArrayList;
 import java.util.List;
