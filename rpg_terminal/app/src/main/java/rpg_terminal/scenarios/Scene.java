@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import rpg_terminal.Screen;
-import rpg_terminal.entities.playable.Creature;
+import rpg_terminal.entities.creatures.Creature;
 
 public class Scene {
     private final List<String> messages;

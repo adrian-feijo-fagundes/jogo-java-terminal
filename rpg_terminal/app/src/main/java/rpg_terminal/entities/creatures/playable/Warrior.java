@@ -1,4 +1,4 @@
-package rpg_terminal.entities.playable;
+package rpg_terminal.entities.creatures.playable;
 
 public class Warrior extends Player {
     public Warrior(

@@ -1,4 +1,6 @@
-package rpg_terminal.entities.playable;
+package rpg_terminal.entities.creatures.playable;
+
+import rpg_terminal.entities.creatures.Creature;
 
 //import java.util.ArrayList;
 //import java.util.List;
