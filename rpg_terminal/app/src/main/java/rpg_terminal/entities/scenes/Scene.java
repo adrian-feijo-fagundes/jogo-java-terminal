@@ -9,11 +9,15 @@ import rpg_terminal.utils.Screen;
 
 public class Scene {
     private final List<String> messages;
+    private final List<String> firstMessages;
     private final List<Option> options;
+    private final List<Option> firstOptions;
 
-    public Scene(List<String> messages) {
-        this.messages = new ArrayList<>(messages);
+    public Scene() {
+        this.messages = new ArrayList<>();
+        this.firstMessages = new ArrayList<>();
         this.options = new ArrayList<>();
+        this.firstOptions = new ArrayList<>();
     }
 
     public List<String> getMessages() {

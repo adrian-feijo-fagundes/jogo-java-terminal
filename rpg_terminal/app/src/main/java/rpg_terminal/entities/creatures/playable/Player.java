@@ -46,7 +46,7 @@ public class Player extends Creature {
         String info = String.format(
                 "\nClasse: %s\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d \nVelocidade: %d\nSorte: %d",
                 this.type,
-                this.getName(),
+                this.getId(),
                 this.life,
                 this.attack,
                 this.mana,

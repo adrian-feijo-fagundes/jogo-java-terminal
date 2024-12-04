@@ -9,7 +9,7 @@ public class Combat extends Scene {
     private Creature creature;
 
     public Combat(List<String> messages, Creature creature) {
-        super(messages);
+        super();
         this.creature = creature;
     }
 

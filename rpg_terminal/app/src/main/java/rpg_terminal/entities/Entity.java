@@ -1,13 +1,14 @@
 package rpg_terminal.entities;
 
-public class Entity {
-    private String name;
+public abstract class Entity {
+    private final String id;
 
-    public Entity(String name) {
-        this.name = name;
+    public Entity(String id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return this.name;
+    public String getId() {
+        return id;
     }
+
 }

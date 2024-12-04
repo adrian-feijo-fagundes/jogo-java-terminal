@@ -18,46 +18,45 @@ public class Scenes {
 
     // Método para inicializar todas as cenas
     private void initializeScenes() {
-        Scene cenaInicial = new Scene(List.of(
-                "Você acorda em uma sala escura, sem lembrar como chegou aqui.",
-                "O chão é frio, e a única saída parece ser uma porta à frente."));
+        Scene salaInicial = new Scene();
+        Scene salaInicialInvestigar = new Scene();
+        Scene salaInicialRecompensa = new Scene();
+        Scene salaPrincipal = new Scene();
+        Scene salaPrincipalPortas = new Scene();
+        Scene homemMisterioso = new Scene();
 
-        Scene cenaExploracao = new Scene(List.of(
-                "Você decide explorar a sala e encontra símbolos estranhos nas paredes.",
-                "Eles parecem te observar de volta."));
+        // QUARTO INICIAL
+        salaInicial.addOption("Abrir a porta", salaPrincipal);
+        salaInicial.addOption("Investigar o quarto", salaInicialInvestigar);
 
-        Scene cenaPorta = new Scene(List.of(
-                "Você abre a porta e encontra um corredor escuro.",
-                "O ar é pesado e há um silêncio perturbador."));
+        salaInicialInvestigar.addOption("Abrir caixa", salaInicialRecompensa);
+        salaInicialInvestigar.addOption("Abrir a porta", salaPrincipal);
 
-        Scene cenaFinal = new Scene(List.of(
-                "Você chegou ao fim do corredor e encontra uma saída. O jogo terminou.",
-                "Parabéns, você completou a jornada!"));
+        salaInicialRecompensa.addOption("Abrir a porta", salaPrincipal);
 
-        // Adicionando opções para as cenas
-        cenaInicial.addOption("Explorar a sala", cenaExploracao);
-        cenaInicial.addOption("Abrir a porta", cenaPorta);
+        // SALA PRINCIPAL
+        salaPrincipal.addOption("Voltar para o quarto", salaInicial);
+        salaPrincipal.addOption("Ir até as portas", salaPrincipalPortas);
+        salaPrincipal.addOption("Conversar com o homem", homemMisterioso);
 
-        cenaExploracao.addOption("Examinar os símbolos", cenaPorta);
-        cenaExploracao.addOption("Voltar para a sala inicial", cenaInicial);
-
-        cenaPorta.addOption("Entrar no corredor", cenaFinal);
-        cenaPorta.addOption("Voltar para a sala inicial", cenaInicial);
-
+        salaPrincipalPortas.addOption("Investigar porta a esquerda", homemMisterioso);
+        salaPrincipalPortas.addOption("Conversa", homemMisterioso);
+        salaPrincipalPortas.addOption("Conversar com o homem", homemMisterioso);
+        
         // Adicionando as cenas na lista
-        scenes.add(cenaInicial);
-        scenes.add(cenaExploracao);
-        scenes.add(cenaPorta);
-        scenes.add(cenaFinal);
+        scenes.add(salaInicial);
+        scenes.add(salaPrincipal);
+        scenes.add(salaPrincipalPortas);
 
+        
         // Definindo a cena inicial
-        this.currentScene = cenaInicial;
+        this.currentScene = salaInicial;
     }
-
+        
     // Método para navegar pela cena atual e para a próxima cena
     public void startGame(Scanner sc, Creature player) {
         while (currentScene != null) {
-            currentScene = currentScene.startEvent(sc, player); // Atualiza a cena atual com a próxima cena
+
         }
     }
 }

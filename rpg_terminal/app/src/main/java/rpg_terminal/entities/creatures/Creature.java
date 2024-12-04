@@ -11,13 +11,13 @@ public class Creature extends Entity implements Character {
     public int luck;
 
     public Creature(
-            String name,
+            String id,
             int life,
             int attack,
             int mana,
             int speed,
             int luck) {
-        super(name);
+        super(id);
         this.life = life;
         this.attack = attack;
         this.mana = mana;
@@ -59,9 +59,9 @@ public class Creature extends Entity implements Character {
         boolean dodge = result >= dodgeChance;
 
         if (dodge) {
-            System.out.println(this.getName() + "Conseguiu esquivar!");
+            System.out.println(this.getId() + "Conseguiu esquivar!");
         } else {
-            System.out.println(this.getName() + "Não conseguiu esquivar!");
+            System.out.println(this.getId() + "Não conseguiu esquivar!");
         }
         return dodge;
     }
@@ -98,7 +98,7 @@ public class Creature extends Entity implements Character {
     public String getInfo() {
         String info = String.format(
                 "\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d \nVelocidade: %d\nSorte: %d",
-                this.getName(),
+                this.getId(),
                 this.life,
                 this.attack,
                 this.mana,
