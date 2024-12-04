@@ -3,7 +3,7 @@ package rpg_terminal.scenarios;
 import java.util.List;
 import java.util.Scanner;
 
-import rpg_terminal.entities.creatures.Creature;
+import rpg_terminal.entities.playable.Creature;
 
 public class Combat extends Scene {
     private Creature creature;

@@ -1,4 +1,4 @@
-package rpg_terminal.entities.creatures;
+package rpg_terminal.entities.playable;
 
 import rpg_terminal.Dice;
 import rpg_terminal.entities.Entity;
