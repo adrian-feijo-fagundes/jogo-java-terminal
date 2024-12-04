@@ -1,7 +1,6 @@
 package rpg_terminal.entities.creatures;
 
 import rpg_terminal.entities.Entity;
-import rpg_terminal.entities.creatures.playable.Character;
 import rpg_terminal.utils.Dice;
 
 public class Creature extends Entity implements Character {
