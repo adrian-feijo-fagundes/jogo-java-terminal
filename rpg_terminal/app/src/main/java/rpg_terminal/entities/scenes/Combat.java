@@ -14,7 +14,7 @@ public class Combat extends Scene {
     }
 
     @Override
-    public void startEvent(Scanner sc, Creature player) {
+    public Scene startEvent(Scanner sc, Creature player) {
         System.out.println("Combate Iniciou");
         boolean combat = true;
         do {
@@ -60,5 +60,6 @@ public class Combat extends Scene {
                     break;
             }
         } while (combat);
+        return null;
     }
 }

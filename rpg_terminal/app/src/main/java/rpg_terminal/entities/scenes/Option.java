@@ -1,16 +1,16 @@
 package rpg_terminal.entities.scenes;
 
 public class Option {
-    private String optionDescription;
+    private String description;
     private Scene nextScene;
 
-    public Option(String optionDescription, Scene nextScene) {
-        this.optionDescription = optionDescription;
+    public Option(String description, Scene nextScene) {
+        this.description = description;
         this.nextScene = nextScene;
     }
 
-    public String getOptionDescription() {
-        return optionDescription;
+    public String getDescription() {
+        return description;
     }
 
     public Scene getNextScene() {
