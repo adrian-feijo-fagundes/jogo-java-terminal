@@ -1,5 +1,6 @@
 package rpg_terminal.scenarios;
 
+import java.util.List;
 import java.util.Scanner;
 
 import rpg_terminal.entities.creatures.Creature;
@@ -7,8 +8,8 @@ import rpg_terminal.entities.creatures.Creature;
 public class Combat extends Scene {
     private Creature creature;
 
-    public Combat(String description, Creature creature) {
-        super(description);
+    public Combat(List<String> messages, Creature creature) {
+        super(messages);
         this.creature = creature;
     }
 
