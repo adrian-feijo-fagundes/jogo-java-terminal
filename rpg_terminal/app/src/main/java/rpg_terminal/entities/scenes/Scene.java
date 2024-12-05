@@ -1,6 +1,7 @@
 package rpg_terminal.entities.scenes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,32 +22,17 @@ public class Scene extends Entity {
         this.options = new ArrayList<>();
     }
 
-    public List<String> getMessages() {
-        return messages;
-    }
-
-    public List<String> getFirstMessages() {
-        return firstMessages;
-    }
-
-    public List<Option> getOptions() {
-        return options;
-    }
 
     public void addOption(String optionDescription, Scene nextScene, String firstMessage, String message) {
         this.options.add(new Option(optionDescription, nextScene, firstMessage, message));
     }
 
     public void addMessages(String[] newMessages) {
-        for (String message : newMessages) {
-            this.messages.add(message);
-        }
+        this.messages.addAll(Arrays.asList(newMessages));
     }
 
     public void addFirstMessages(String[] newFirstMessages) {
-        for (String message : newFirstMessages) {
-            this.firstMessages.add(message);
-        }
+        this.firstMessages.addAll(Arrays.asList(newFirstMessages));
     }
 
     public Scene startEvent(Scanner sc, Creature player, GameState gameState) {
@@ -74,7 +60,7 @@ public class Scene extends Entity {
         if (!this.options.isEmpty()) {
             System.out.println("\nO que você deseja fazer?");
             for (int i = 0; i < this.options.size(); i++) {
-                System.out.printf("%d. %s\n", i + 1, this.options.get(i).getDescription());
+                System.out.printf("%d. %s\n", i + 1, this.options.get(i).description());
             }
 
             // Captura e valida a escolha do jogador
@@ -91,7 +77,7 @@ public class Scene extends Entity {
             }
 
             // Retorna a próxima cena conforme a escolha
-            return this.options.get(escolha - 1).getNextScene();
+            return this.options.get(escolha - 1).nextScene();
         }
 
         // Caso não haja opções

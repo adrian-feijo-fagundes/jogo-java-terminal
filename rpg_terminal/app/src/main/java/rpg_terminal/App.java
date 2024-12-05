@@ -9,27 +9,15 @@ import rpg_terminal.entities.creatures.playable.Warrior;
 import rpg_terminal.utils.Dice;
 import rpg_terminal.utils.Screen;
 
-//import rpg_terminal.scenarios.Scene;
 
-//import rpg_terminal.scenarios.Combat;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         var player = createPlayer(sc);
-        // Perguntar nome do personagem
         System.out.println(player.getInfo());
         sc.nextLine();
-        // // test combate
-        // Creature enemy = new Creature("Orc", 100, 40, 0, 0, 30, 10);
-        // Creature player = new Warrior("Guerreiro", 10, 40, 0, 0, 30, 0);
-        // Scene battleOne = new Combat("", enemy);
-
-        // battleOne.startEvent(sc, player);
-
         Screen.clear();
-
         sc.close();
     }
 

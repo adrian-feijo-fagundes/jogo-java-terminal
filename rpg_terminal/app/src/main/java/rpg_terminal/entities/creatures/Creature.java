@@ -96,7 +96,7 @@ public class Creature extends Entity implements Character {
     }
 
     public String getInfo() {
-        String info = String.format(
+        return String.format(
                 "\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d \nVelocidade: %d\nSorte: %d",
                 this.getId(),
                 this.life,
@@ -104,6 +104,5 @@ public class Creature extends Entity implements Character {
                 this.mana,
                 this.speed,
                 this.luck);
-        return info;
     }
 }

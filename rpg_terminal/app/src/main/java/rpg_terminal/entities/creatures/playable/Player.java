@@ -43,7 +43,7 @@ public class Player extends Creature {
 
     @Override
     public String getInfo() {
-        String info = String.format(
+        return String.format(
                 "\nClasse: %s\nNome: %s\nHP: %d\nAtaque: %d\nMana: %d \nVelocidade: %d\nSorte: %d",
                 this.type,
                 this.getId(),
@@ -52,6 +52,5 @@ public class Player extends Creature {
                 this.mana,
                 this.speed,
                 this.luck);
-        return info;
     }
 }

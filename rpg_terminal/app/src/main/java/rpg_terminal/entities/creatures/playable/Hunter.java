@@ -13,7 +13,7 @@ public class Hunter extends Player {
                 "Caçador",
                 45 + (int) (life * 1.1),
                 15 + (int) (attack * 1.4),
-                30 + mana * 1,
+                30 + mana,
                 12 + (int) (speed * 1.4),
                 10 + (int) (luck * 1.1));
     }

@@ -11,9 +11,9 @@ public class Merchant extends Player {
         super(
                 name,
                 "Mercador",
-                50 + life * 1,
+                50 + life,
                 10 + (int) (attack * 1.2),
-                50 + mana * 1,
+                50 + mana,
                 8 + (int) (speed * 1.3),
                 15 + (int) (luck * 1.5));
     }

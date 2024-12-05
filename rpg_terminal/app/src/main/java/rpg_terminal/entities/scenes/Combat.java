@@ -6,7 +6,7 @@ import rpg_terminal.entities.creatures.Creature;
 import rpg_terminal.utils.GameState;
 
 public class Combat extends Scene {
-    private Creature creature;
+    private final Creature creature;
 
     public Combat(String id, Creature creature) {
         super(id);

@@ -14,7 +14,7 @@ public class Warrior extends Player {
                 60 + (int) (life * 1.5),
                 20 + (int) (attack * 1.4),
                 10 + (int) (mana * 0.5),
-                10 + speed * 1,
+                10 + speed,
                 5 + (int) (luck * 0.8));
     }
 }
