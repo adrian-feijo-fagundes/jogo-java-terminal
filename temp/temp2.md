@@ -1,81 +1,34 @@
-Aqui estão mensagens detalhadas para cada situação que você listou:
+Entendido! Aqui está uma versão ajustada do cenário com essas condições:
 
 ---
 
-## **Ao Nascer**
+### Cena: O Despertar
 
-### **Sair da Sala:**
+Você desperta no chão frio de um quarto vazio. Suas roupas estão sujas de poeira, e sua cabeça dói como se tivesse levado um golpe. Não há móveis, apenas uma porta velha e trincada à sua frente. O silêncio é absoluto, exceto pelo som distante de algo pingando.
 
-Você decide deixar o quarto e explorar o que há além das paredes sombrias. O ar do lado de fora é pesado, e seus passos ecoam no corredor vazio enquanto você se aproxima de um destino incerto.
+Enquanto seus olhos se ajustam à penumbra, você nota alguns panos jogados em um canto do quarto. Eles parecem deslocados, mas nada mais chama atenção à primeira vista.
 
----
+O que você faz?
 
-### **Investigar a Sala:**
-
-Você olha ao redor, examinando a pequena sala onde acordou. As paredes de pedra estão desgastadas, e há marcas de arranhões espalhadas pelo chão. Nada parece familiar, mas algo no ambiente faz você sentir que não deveria ficar aqui por muito tempo.
-
----
-
-## **Sala Principal**
-
-### **Estranho:**
-
-O homem encostado na parede parece perdido em pensamentos. Seu olhar triste o acompanha, como se ele estivesse vendo algo além da sala. Você sente que ele tem algo importante a dizer, mas só se você tomar a iniciativa.
+1. **Tentar abrir a porta imediatamente.**
+2. **Investigar o quarto em busca de algo útil.**
 
 ---
 
-### **Ir até as Portas:**
+### Opções de desenvolvimento:
 
-Você se aproxima das portas, sentindo uma mistura de curiosidade e apreensão. Ambas estão trancadas, mas o que pode estar além delas parece chamar você.
+**Se o jogador tentar abrir a porta:**  
+A porta range, mas se abre lentamente. Do outro lado, há um corredor escuro que parece levar a outro lugar. Sem investigar o quarto, você avança, sem saber o que deixou para trás.
 
----
+**Se o jogador investigar o quarto:**  
+Você revira os panos no canto e descobre uma pequena caixa de madeira, parcialmente coberta de poeira. A tampa está solta, como se alguém tivesse esquecido de fechá-la completamente.
 
-### **Voltar para o Quarto:**
-
-Você decide que ainda não está pronto para enfrentar o desconhecido e retorna ao quarto. Talvez seja o medo ou apenas o desejo de pensar melhor antes de seguir em frente.
-
----
-
-## **Portas**
-
-### **Primeira Porta - Trancada:**
-
-Você tenta girar a maçaneta, mas a porta está firmemente trancada. A fechadura parece antiga, e você precisará de uma chave para abri-la.
+- **Abrir a caixa:** Dentro, você encontra [um item essencial para a trama, como uma chave, uma mensagem, ou um objeto misterioso].
+- **Deixar a caixa fechada:** Você decide que talvez não valha a pena se distrair com isso agora e volta sua atenção à porta.
 
 ---
 
-### **Segunda Porta - Trancada:**
+O que acha? Se precisar de mais detalhes ou ajustes, é só avisar! 😊
 
-Assim como a outra, esta porta não cede. Algo na fechadura dela parece ainda mais frio, quase ameaçador.
-
----
-
-### **Conversar com o Estranho:**
-
-Você se vira para o estranho, esperando alguma resposta. Ele ergue os olhos lentamente e parece hesitar antes de falar. Talvez ele tenha algo útil para dizer.
-
----
-
-### **Voltar para o Quarto:**
-
-Você olha para as portas mais uma vez, mas decide que não é o momento. Voltar ao quarto parece mais seguro, mesmo que não responda às suas perguntas.
-
----
-
-## **Estranho**
-
-### **Ir até as Portas:**
-
-Sem dizer nada, você deixa o homem e caminha em direção às portas. Mesmo sem palavras, é como se você pudesse sentir o peso do olhar dele em suas costas.
-
----
-
-### **Voltar para o Quarto:**
-
-Você decide que não há muito mais a fazer por enquanto. Sem olhar para trás, retorna ao quarto, deixando o estranho sozinho em sua melancolia.
-
----
-
-Essas mensagens mantêm o clima de mistério e reforçam a importância das escolhas do jogador. Se quiser ajustar o tom ou adicionar mais detalhes, é só dizer!
-
-package rpg_terminal.entities;
+não há mais nada aqui
+a porta está trancada

@@ -1,20 +1,20 @@
 package rpg_terminal.entities.scenes;
 
-import java.util.List;
 import java.util.Scanner;
 
 import rpg_terminal.entities.creatures.Creature;
+import rpg_terminal.utils.GameState;
 
 public class Combat extends Scene {
     private Creature creature;
 
-    public Combat(List<String> messages, Creature creature) {
-        super();
+    public Combat(String id, Creature creature) {
+        super(id);
         this.creature = creature;
     }
 
     @Override
-    public Scene startEvent(Scanner sc, Creature player) {
+    public Scene startEvent(Scanner sc, Creature player, GameState gameState) {
         System.out.println("Combate Iniciou");
         boolean combat = true;
         do {

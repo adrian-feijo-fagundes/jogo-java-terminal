@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import rpg_terminal.entities.Entity;
 import rpg_terminal.entities.creatures.Creature;
+import rpg_terminal.utils.GameState;
 import rpg_terminal.utils.Screen;
 
-public class Scene {
+public class Scene extends Entity {
     private final List<String> messages;
     private final List<String> firstMessages;
     private final List<Option> options;
 
-    public Scene() {
+    public Scene(String id) {
+        super(id);
         this.messages = new ArrayList<>();
         this.firstMessages = new ArrayList<>();
         this.options = new ArrayList<>();
@@ -30,8 +33,8 @@ public class Scene {
         return options;
     }
 
-    public void addOption(String optionDescription, Scene nextScene) {
-        this.options.add(new Option(optionDescription, nextScene));
+    public void addOption(String optionDescription, Scene nextScene, String firstMessage, String message) {
+        this.options.add(new Option(optionDescription, nextScene, firstMessage, message));
     }
 
     public void addMessages(String[] newMessages) {
@@ -46,15 +49,25 @@ public class Scene {
         }
     }
 
-    public Scene startEvent(Scanner sc, Creature player) {
-        // Exibe mensagens
-        for (String message : this.messages) {
+    public Scene startEvent(Scanner sc, Creature player, GameState gameState) {
+        // Verifica se esta cena já foi visitada no GameState
+        boolean isFirstVisit = !gameState.hasVisited(this.getId());
+        List<String> currentMessages = isFirstVisit ? this.firstMessages : this.messages;
+
+        for (int i = 0; i < currentMessages.size(); i++) {
             Screen.clear();
-            System.out.println(message);
-            if (message != this.messages.get(this.messages.size() - 1)) {
+            if (i < currentMessages.size() - 1) {
+                System.out.println(currentMessages.get(i));
                 System.out.println("\nPRESSIONE ENTER PARA CONTINUAR");
-                sc.nextLine(); // Aguarda o jogador pressionar Enter
+                sc.nextLine();// Aguarda o jogador pressionar Enter
+            } else {
+                System.out.println(currentMessages.get(i));
             }
+        }
+
+        // Marca a cena como visitada no GameState
+        if (isFirstVisit) {
+            gameState.addToVisited(this.getId());
         }
 
         // Exibe as opções disponíveis
@@ -70,6 +83,7 @@ public class Scene {
                 System.out.print("\nEscolha uma opção: ");
                 try {
                     escolha = sc.nextInt();
+                    sc.nextLine();
                 } catch (Exception e) {
                     sc.nextLine(); // Limpa a entrada inválida
                     System.out.println("Por favor, insira um número válido.");
