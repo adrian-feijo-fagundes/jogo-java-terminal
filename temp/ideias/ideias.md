@@ -1,7 +1,3 @@
-A partir do diagrama que você enviou, podemos criar um esqueleto narrativo para o jogo. Vamos dividir a história em uma introdução, desenvolvimento e conclusão, com base nos elementos presentes.
-
----
-
 ### **Introdução**
 
 Você é um **aventurante solitário** que acorda em uma sala desconhecida. Não há lembranças de como chegou ali, mas sente que algo o atrai para explorar o local. Há uma porta e, ao abri-la, encontra-se em um labirinto sombrio. Seu objetivo? **Encontrar a saída e sobreviver**.
@@ -46,13 +42,3 @@ Ao alcançar a **saída**, você descobre a verdade por trás do labirinto. Talv
 - **Final heróico:** Você é recompensado com riquezas ou liberdade.
 - **Final ambíguo:** A saída leva a mais perigos ou revela que você está preso em um ciclo interminável.
 - **Final trágico:** O jogador descobre que não era o herói, mas sim o "vilão" manipulado.
-
----
-
-Se quiser, posso ajudar a escrever trechos de diálogo, criar mecânicas de jogo específicas ou estruturar o código de navegação entre salas.
-
----
-
-Ótimo! Com base nessas ideias, podemos expandir o papel de cada personagem e criar interações narrativas mais envolventes. Aqui está como cada um pode ser integrado ao jogo:
-
----

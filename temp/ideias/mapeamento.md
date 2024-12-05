@@ -98,24 +98,3 @@ A última sala antes da saída, trancada e com recompensas cruciais.
 A última porta que encerra o jogo. Está trancada e só pode ser aberta com a chave obtida na Sala 03.  
 **Final:**  
 O jogador escapa do labirinto, mas o que o espera do lado de fora? Fica a critério da narrativa que você desejar:
-
-- **Final positivo:** Liberdade e tesouros.
-- **Final misterioso:** Revela que o labirinto fazia parte de algo maior.
-- **Final ambíguo:** O jogador escapa, mas percebe que está em outro labirinto.
-
----
-
-### **Próximos Passos**
-
-1. **Implementação dos desafios:**
-   - Criação de uma lógica para inimigos com níveis diferentes (ex.: HP, dano, etc.).
-2. **Interação com os NPCs:**
-   - Diálogos dinâmicos baseados em escolhas feitas pelo jogador.
-3. **Gestão de inventário:**
-   - Itens coletados (chaves, espólios, recompensas) para desbloquear salas ou negociar.
-4. **Sistema de combate simples:**
-   - Baseado em turnos ou escolha de ações no terminal.
-5. **Exploração de mapas:**
-   - Exibir opções de caminho no terminal (ex.: "Escolha ir para a Sala 1.1 ou voltar para a Sala Principal").
-
-Se precisar, posso ajudar a criar um exemplo em código para qualquer uma dessas mecânicas! 😊

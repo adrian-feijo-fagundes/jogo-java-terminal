@@ -20,6 +20,13 @@ public class Scenes {
     // Método para inicializar todas as cenas
     private void initializeScenes() {
         Scene salaInicial = new Scene("s001");
+        Scene salaInicialInvestigar = new Scene("s002");
+        Scene salaInicialRecompensa = new Scene("s003");
+        Scene salaPrincipal = new Scene("s004");
+        Scene salaPrincipalPortas = new Scene("s005");
+        Scene homemMisterioso = new Scene("s006");
+
+        // Sala Inicial
         salaInicial.addFirstMessages(new String[] {
                 "Você desperta no chão frio de um quarto vazio. Suas roupas estão sujas de poeira, e sua cabeça\ndói como se tivesse levado um golpe.",
                 "Não há móveis, apenas uma porta velha e trincada à sua frente. \nO silêncio é absoluto, exceto pelo som distante de algo pingando."
@@ -28,7 +35,6 @@ public class Scenes {
                 "Você voltou para o quarto"
         });
 
-        Scene salaInicialInvestigar = new Scene("s002");
         salaInicialInvestigar.addFirstMessages(new String[] {
                 "Enquanto seus olhos se ajustam à penumbra, você nota alguns panos jogados em um canto do quarto. \nEles parecem deslocados, mas nada mais chama atenção à primeira vista.",
                 "Você revira os panos no canto e descobre uma pequena caixa de madeira, parcialmente coberta de \npoeira. A tampa está solta, como se alguém tivesse esquecido de fechá-la completamente."
@@ -38,7 +44,6 @@ public class Scenes {
                 "O cheiro aqui é nojento"
         });
 
-        Scene salaInicialRecompensa = new Scene("s003");
         salaInicialRecompensa.addFirstMessages(new String[] {
                 "Ao abrir a caixa, você encontra uma arma simples, mas robusta, com sinais de uso, como se tivesse \nsido carregada por alguém que a usava regularmente. Embora pareça comum, você sente que ela pode \nser mais do que aparenta."
         });
@@ -49,11 +54,6 @@ public class Scenes {
                 "...você tem sorte de não estar sozinho."
         });
 
-        Scene salaPrincipal = new Scene("s004");
-
-        Scene salaPrincipalPortas = new Scene("s005");
-
-        Scene homemMisterioso = new Scene("s006");
 
         // QUARTO INICIAL
         salaInicial.addOption("Tentar abrir a porta", salaPrincipal, "", "");
@@ -77,6 +77,7 @@ public class Scenes {
         scenes.add(salaInicial);
         scenes.add(salaPrincipal);
         scenes.add(salaPrincipalPortas);
+        scenes.add(homemMisterioso);
 
         // Definindo a cena inicial
         this.currentScene = salaInicial;
