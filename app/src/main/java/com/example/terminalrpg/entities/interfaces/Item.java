@@ -8,8 +8,6 @@ package com.example.terminalrpg.entities.interfaces;
  *
  * @author Adrian
  */
-public interface CreatureInterface {
-    public void attack(CreatureInterface other);
-    public boolean evade();
-    public boolean criticalHit();
+public interface Item {
+    
 }

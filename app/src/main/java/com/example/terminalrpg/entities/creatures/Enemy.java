@@ -4,10 +4,31 @@
  */
 package com.example.terminalrpg.entities.creatures;
 
+import com.example.terminalrpg.entities.interfaces.EnemyInterface;
+import com.example.terminalrpg.entities.interfaces.Item;
+
 /**
  *
  * @author Adrian
  */
-public class Enemy {
-    
+public class Enemy extends Creature implements EnemyInterface {
+    private Item drop;
+
+    public Enemy(Item drop, String type, int life, int attack, int speed, int luck, String id, String name) {
+        super(type, life, attack, speed, luck, id, name);
+        this.drop = drop;
+    }
+
+    public Item getDrop() {
+        return drop;
+    }
+
+    public void setDrop(Item drop) {
+        this.drop = drop;
+    }
+
+    @Override
+    public Item drop() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }   
 }

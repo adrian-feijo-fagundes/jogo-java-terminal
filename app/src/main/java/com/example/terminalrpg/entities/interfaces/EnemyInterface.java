@@ -9,5 +9,5 @@ package com.example.terminalrpg.entities.interfaces;
  * @author Adrian
  */
 public interface EnemyInterface {
-    
+    public Item drop();
 }

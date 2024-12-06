@@ -4,10 +4,16 @@
  */
 package com.example.terminalrpg.entities.creatures.playable;
 
+import com.example.terminalrpg.entities.creatures.Player;
+
 /**
  *
  * @author Adrian
  */
-public class Warrior {
+public class Warrior extends Player {
+    
+    public Warrior(int mana, String type, int life, int attack, int speed, int luck, String id, String name) {
+        super(mana, type, life, attack, speed, luck, id, name);
+    }
     
 }
