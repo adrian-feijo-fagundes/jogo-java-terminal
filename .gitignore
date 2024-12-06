@@ -1,13 +1,5 @@
 # Ignore Gradle project-specific cache directory
 .gradle
-rpg_terminal/app/bin
-rpg_terminal/app/build.gradle
 
 # Ignore Gradle build output directory
-
-# Ignore to simplify
-rpg_terminal/gradle
-rpg_terminal/app/build
-rpg_terminal/gradlew
-rpg_terminal/gradlew.bat
-rpg_terminal/settings.gradle
+build
