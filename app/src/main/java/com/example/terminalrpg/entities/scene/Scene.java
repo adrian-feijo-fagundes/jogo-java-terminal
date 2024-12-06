@@ -5,7 +5,7 @@
 package com.example.terminalrpg.entities.scene;
 
 import com.example.terminalrpg.entities.Entity;
-import com.example.terminalrpg.entities.creatures.Creature;
+import com.example.terminalrpg.entities.creatures.Player;
 import com.example.terminalrpg.utils.GameState;
 import com.example.terminalrpg.utils.Message;
 import java.util.ArrayList;
@@ -41,13 +41,13 @@ public class Scene extends Entity {
         this.firstMessages.addAll(Arrays.asList(newFirstMessages));
     }
 
-    public Scene startEvent(Scanner sc, Creature player, GameState gameState) {
+    public Scene startEvent(Scanner sc, Player player, GameState gameState) {
         // Verifica se esta cena já foi visitada no GameState
         boolean isFirstVisit = !gameState.hasVisited(this.getId());
         List<String> currentMessages = isFirstVisit ? this.firstMessages : this.messages;
 
         for (int i = 0; i < currentMessages.size(); i++) {
-            
+
             if (i < currentMessages.size() - 1) {
                 System.out.println(currentMessages.get(i));
                 Message.enter("");

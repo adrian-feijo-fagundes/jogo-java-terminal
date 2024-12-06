@@ -4,12 +4,16 @@
  */
 package com.example.terminalrpg.entities.interfaces;
 
+import com.example.terminalrpg.entities.creatures.Creature;
+
 /**
  *
  * @author Adrian
  */
 public interface CreatureInterface {
-    public void attack(CreatureInterface other);
-    public boolean evade();
-    public boolean criticalHit();
+    public void attack(Creature other);
+
+    public boolean evade(int difficult);
+
+    public int criticalHit();
 }

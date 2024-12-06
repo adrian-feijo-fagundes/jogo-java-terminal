@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Adrian
  */
 public abstract class Dice {
-     public static int roll(Scanner sc, int timesToRoll, int sides) {
+    public static int roll(Scanner sc, int timesToRoll, int sides) {
         Message.dice(sc, timesToRoll);
         int total = 0;
         for (int i = 0; i < timesToRoll; i++) {
@@ -53,5 +53,5 @@ public abstract class Dice {
         int total = (r1 * 10) + r2;
         sc.close();
         return total;
-    }   
+    }
 }

@@ -10,6 +10,8 @@ package com.example.terminalrpg.entities.interfaces;
  */
 public interface PlayerInterface {
     public void useItem(Item item);
+
     public void useSpecialAbility();
+
     public boolean flee();
 }

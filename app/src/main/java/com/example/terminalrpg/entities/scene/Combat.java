@@ -5,6 +5,7 @@
 package com.example.terminalrpg.entities.scene;
 
 import com.example.terminalrpg.entities.creatures.Creature;
+import com.example.terminalrpg.entities.creatures.Player;
 import com.example.terminalrpg.utils.GameState;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ public class Combat extends Scene {
     }
 
     @Override
-    public Scene startEvent(Scanner sc, Creature player, GameState gameState) {
+    public Scene startEvent(Scanner sc, Player player, GameState gameState) {
         System.out.println("Combate Iniciou");
         boolean combat = true;
         do {
@@ -50,7 +51,7 @@ public class Combat extends Scene {
                 // player.useItem();
                 // enemy.attack(player);
                 case 4 -> {
-                    if (player.evade()) {
+                    if (player.flee()) {
                         System.out.println("Conseguiu fugir!");
                         combat = false;
                     } else {

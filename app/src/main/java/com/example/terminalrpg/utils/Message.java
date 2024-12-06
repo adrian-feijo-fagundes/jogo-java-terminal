@@ -19,6 +19,7 @@ public abstract class Message {
         }
 
     }
+
     public static void dice(Scanner sc, int timesToRoll) {
         System.out.println("Voce deverá rolar o dado " + timesToRoll + " Vezes.");
         Message.enter("");

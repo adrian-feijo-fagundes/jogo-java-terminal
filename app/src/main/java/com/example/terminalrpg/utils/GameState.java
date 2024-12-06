@@ -12,7 +12,7 @@ import java.util.Set;
  * @author Adrian
  */
 public class GameState {
-     private final Set<String> visited;
+    private final Set<String> visited;
     private final Set<String> obtainedItens;
     private final Set<String> defeatedEnemies;
 

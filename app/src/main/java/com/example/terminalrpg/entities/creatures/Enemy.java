@@ -14,8 +14,24 @@ import com.example.terminalrpg.entities.interfaces.Item;
 public class Enemy extends Creature implements EnemyInterface {
     private Item drop;
 
-    public Enemy(Item drop, String type, int life, int attack, int speed, int luck, String id, String name) {
-        super(type, life, attack, speed, luck, id, name);
+    public Enemy(
+            Item drop,
+            String type,
+            int life,
+            int attack,
+            int speed,
+            int luck,
+            String id,
+            String name) {
+
+        super(
+                type,
+                life,
+                attack,
+                speed,
+                luck,
+                id,
+                name);
         this.drop = drop;
     }
 
@@ -29,6 +45,6 @@ public class Enemy extends Creature implements EnemyInterface {
 
     @Override
     public Item drop() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }   
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
