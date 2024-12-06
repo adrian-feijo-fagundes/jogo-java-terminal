@@ -24,7 +24,6 @@ public class Player extends Creature implements PlayerInterface {
             int attack,
             int speed,
             int luck,
-            String id,
             String name) {
 
         super(
@@ -33,7 +32,6 @@ public class Player extends Creature implements PlayerInterface {
                 attack,
                 speed,
                 luck,
-                id,
                 name);
         this.mana = mana;
         this.inventory = new ArrayList<>();

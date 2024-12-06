@@ -16,8 +16,8 @@ import java.util.Scanner;
 public class Combat extends Scene {
     private final Creature creature;
 
-    public Combat(String id, String name, Creature creature) {
-        super(id, name);
+    public Combat(String name, Creature creature) {
+        super(name);
         this.creature = creature;
     }
 

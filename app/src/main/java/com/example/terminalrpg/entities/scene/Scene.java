@@ -23,8 +23,8 @@ public class Scene extends Entity {
     private final List<String> firstMessages;
     private final List<Option> options;
 
-    public Scene(String id, String name) {
-        super(id, name);
+    public Scene(String name) {
+        super(name);
         this.messages = new ArrayList<>();
         this.firstMessages = new ArrayList<>();
         this.options = new ArrayList<>();

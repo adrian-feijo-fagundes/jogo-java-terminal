@@ -12,9 +12,9 @@ import java.util.Set;
  * @author Adrian
  */
 public class GameState {
-    private final Set<String> visited;
-    private final Set<String> obtainedItens;
-    private final Set<String> defeatedEnemies;
+    private final Set<Integer> visited;
+    private final Set<Integer> obtainedItens;
+    private final Set<Integer> defeatedEnemies;
 
     public GameState() {
         this.visited = new HashSet<>();
@@ -23,29 +23,29 @@ public class GameState {
     }
 
     // Métodos para manipular as cenas visitadas
-    public boolean hasVisited(String sceneName) {
+    public boolean hasVisited(int sceneName) {
         return visited.contains(sceneName);
     }
 
-    public void addToVisited(String sceneName) {
+    public void addToVisited(int sceneName) {
         visited.add(sceneName);
     }
 
     // Métodos para manipular os itens obtidos
-    public boolean hasItem(String item) {
+    public boolean hasItem(int item) {
         return obtainedItens.contains(item);
     }
 
-    public void addItem(String item) {
+    public void addItem(int item) {
         obtainedItens.add(item);
     }
 
     // Métodos para manipular inimigos derrotados
-    public boolean defeatEnemy(String inimigo) {
+    public boolean defeatEnemy(int inimigo) {
         return defeatedEnemies.contains(inimigo);
     }
 
-    public void addDefeatedEnemy(String inimigo) {
+    public void addDefeatedEnemy(int inimigo) {
         defeatedEnemies.add(inimigo);
     }
 

@@ -27,12 +27,12 @@ public class Scenes {
 
     // Método para inicializar todas as cenas
     private void initializeScenes() {
-        Scene salaInicial = new Scene("s001", null);
-        Scene salaInicialInvestigar = new Scene("s002", null);
-        Scene salaInicialRecompensa = new Scene("s003", null);
-        Scene salaPrincipal = new Scene("s004", null);
-        Scene salaPrincipalPortas = new Scene("s005", null);
-        Scene homemMisterioso = new Scene("s006", null);
+        Scene salaInicial = new Scene("s001");
+        Scene salaInicialInvestigar = new Scene("s002");
+        Scene salaInicialRecompensa = new Scene("s003");
+        Scene salaPrincipal = new Scene("s004");
+        Scene salaPrincipalPortas = new Scene("s005");
+        Scene homemMisterioso = new Scene("s006");
         // Sala Inicial
         salaInicial.addFirstMessages(new String[]{
             "Você desperta no chão frio de um quarto vazio. Suas roupas estão sujas de poeira, e sua cabeça\ndói como se tivesse levado um golpe.",

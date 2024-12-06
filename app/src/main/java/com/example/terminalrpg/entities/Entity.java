@@ -8,16 +8,17 @@ package com.example.terminalrpg.entities;
  *
  * @author Adrian
  */
-public class Entity {
-    private final String id;
+public abstract class Entity {
+    private static int idCounter = 0;
+    private final int id;
     private String name;
 
-    public Entity(String id, String name) {
-        this.id = id;
+    public Entity(String name) {
+        this.id = idCounter++;
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

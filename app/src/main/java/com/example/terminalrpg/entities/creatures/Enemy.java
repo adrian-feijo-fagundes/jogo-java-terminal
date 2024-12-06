@@ -21,7 +21,6 @@ public class Enemy extends Creature implements EnemyInterface {
             int attack,
             int speed,
             int luck,
-            String id,
             String name) {
 
         super(
@@ -30,7 +29,6 @@ public class Enemy extends Creature implements EnemyInterface {
                 attack,
                 speed,
                 luck,
-                id,
                 name);
         this.drop = drop;
     }

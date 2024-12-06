@@ -19,7 +19,6 @@ public class Warrior extends Player {
             int attack,
             int speed,
             int luck,
-            String id,
             String name) {
 
         super(
@@ -29,7 +28,6 @@ public class Warrior extends Player {
                 attack,
                 speed,
                 luck,
-                id,
                 name);
     }
 

@@ -25,12 +25,9 @@ public class Creature extends Entity implements CreatureInterface {
             int attack,
             int speed,
             int luck,
-            String id,
             String name) {
 
-        super(
-                id,
-                name);
+        super(name);
         this.type = type;
         this.life = life;
         this.attack = attack;
