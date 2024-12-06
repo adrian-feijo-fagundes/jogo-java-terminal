@@ -4,6 +4,7 @@
  */
 package com.example.terminalrpg.entities.scene;
 
+import com.example.terminalrpg.utils.Option;
 import com.example.terminalrpg.entities.Entity;
 import com.example.terminalrpg.entities.creatures.Player;
 import com.example.terminalrpg.utils.GameState;
