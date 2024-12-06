@@ -9,5 +9,5 @@ package com.example.terminalrpg.entities.scene;
  * @author Adrian
  */
 public class Reward {
-    
+
 }
