@@ -8,7 +8,6 @@ import rpg_terminal.entities.creatures.Creature;
 public class Player extends Creature {
     // private List<String> playerInventory;
     private String type;
-    private double gold;
 
     public Player(
             String name,
@@ -26,16 +25,8 @@ public class Player extends Creature {
                 speed,
                 luck);
         this.type = type;
-        gold = 0;
+
         // playerInventory = new ArrayList<>();
-    }
-
-    public double getGold() {
-        return this.gold;
-    }
-
-    public void setGold(double gold) {
-        this.gold = gold;
     }
 
     public void openInventory() {

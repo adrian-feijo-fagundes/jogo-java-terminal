@@ -22,7 +22,6 @@ public class Scene extends Entity {
         this.options = new ArrayList<>();
     }
 
-
     public void addOption(String optionDescription, Scene nextScene, String firstMessage, String message) {
         this.options.add(new Option(optionDescription, nextScene, firstMessage, message));
     }

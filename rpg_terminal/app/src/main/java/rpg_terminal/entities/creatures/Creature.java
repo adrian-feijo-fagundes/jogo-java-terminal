@@ -3,7 +3,7 @@ package rpg_terminal.entities.creatures;
 import rpg_terminal.entities.Entity;
 import rpg_terminal.utils.Dice;
 
-public class Creature extends Entity implements Character {
+public class Creature extends Entity {
     public int life;
     public int attack;
     public int mana;
@@ -23,15 +23,6 @@ public class Creature extends Entity implements Character {
         this.mana = mana;
         this.speed = speed;
         this.luck = luck;
-    }
-
-    @Override
-    public void specialAttack() {
-
-    }
-
-    public void useItem() {
-
     }
 
     public boolean run() {
@@ -75,7 +66,6 @@ public class Creature extends Entity implements Character {
         return 1; // Ataque normal
     }
 
-    @Override
     public void attack(Creature other) {
         int critical = this.criticalHit();
 
