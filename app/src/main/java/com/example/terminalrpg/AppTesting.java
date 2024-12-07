@@ -17,7 +17,7 @@ public class AppTesting {
         try (Scanner sc = new Scanner(System.in)) {
             GameState state = new GameState();
             Scenes game = new Scenes();
-            
+
             game.startGame(sc, null, state);
         }
     }
