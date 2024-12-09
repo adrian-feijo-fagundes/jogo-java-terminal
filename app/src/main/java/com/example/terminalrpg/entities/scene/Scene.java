@@ -42,10 +42,7 @@ public class Scene extends Entity {
         this.firstMessages.addAll(Arrays.asList(newFirstMessages));
     }
 
-    public Scene startEvent(Scanner sc, Player player, GameState gameState) {
-        // Verifica se esta cena já foi visitada no GameState
-        boolean isFirstVisit = !gameState.hasVisited(this.getId());
-        List<String> currentMessages = isFirstVisit ? this.firstMessages : this.messages;
+    public void showMessages(Scanner sc, List<String> currentMessages) {
 
         for (int i = 0; i < currentMessages.size(); i++) {
 
@@ -57,13 +54,8 @@ public class Scene extends Entity {
                 System.out.println(currentMessages.get(i));
             }
         }
-
-        // Marca a cena como visitada no GameState
-        if (isFirstVisit) {
-            gameState.addToVisited(this.getId());
-        }
-
-        // Exibe as opções disponíveis
+    }
+    public Scene showOptions(Scanner sc) {
         if (!this.options.isEmpty()) {
             System.out.println("\nO que você deseja fazer?");
             for (int i = 0; i < this.options.size(); i++) {
@@ -82,13 +74,34 @@ public class Scene extends Entity {
                     System.out.println("Por favor, insira um número válido.");
                 }
             }
-
             // Retorna a próxima cena conforme a escolha
             return this.options.get(escolha - 1).nextScene();
         }
-
-        // Caso não haja opções
         System.out.println("\nNão há mais opções nesta cena. Fim de jogo.");
         return null;
+    }
+    public Scene startEvent(Scanner sc, Player player, GameState gameState) {
+        // Verifica se esta cena já foi visitada no GameState
+        boolean isFirstVisit = !gameState.hasVisited(this.getId());
+        List<String> currentMessages = isFirstVisit ? this.firstMessages : this.messages;
+
+        showMessages(sc, currentMessages);
+        // Marca a cena como visitada no GameState
+        if (isFirstVisit) {
+            gameState.addToVisited(this.getId());
+        }
+
+        // Exibe as opções disponíveis
+        Scene nextScene = showOptions(sc);
+
+        if (!haveItem()) {
+            return null;
+        }
+        return nextScene;
+        // Caso não haja opções
+
+    }
+    public boolean haveItem() {
+        return true;
     }
 }

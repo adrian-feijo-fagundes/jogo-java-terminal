@@ -4,10 +4,12 @@
  */
 package com.example.terminalrpg.entities.creatures;
 
-import com.example.terminalrpg.entities.interfaces.Item;
 import com.example.terminalrpg.entities.interfaces.PlayerInterface;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import com.example.terminalrpg.entities.itens.Item;
 
 /**
  *
@@ -45,11 +47,16 @@ public class Player extends Creature implements PlayerInterface {
         this.mana = mana;
     }
 
-    public List<Item> getInventory() {
-        return inventory;
+    public Item getItem(String name) {
+        for (Item item : this.inventory) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                return item;
+            }
+        }
+        return null;
     }
 
-    public void setInventory(List<Item> inventory) {
+    public void addItem(List<Item> inventory) {
         this.inventory = inventory;
     }
 

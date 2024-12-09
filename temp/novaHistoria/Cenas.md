@@ -1,0 +1,17 @@
+
+
+- QUARTO INICIAL
+    - BAU
+
+- CORREDOR
+    - NPC
+
+- SALA 01
+    - INIMIGO
+    - BAU
+    - CHAVE
+
+- SALA 02
+    - INIMIGO
+
+- SAIDA

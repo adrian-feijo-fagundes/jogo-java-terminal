@@ -8,6 +8,22 @@ package com.example.terminalrpg.entities.itens;
  *
  * @author Adrian
  */
-public class Equipable {
-    
+public class Equipable extends Item {
+    private String type;
+
+
+    public Equipable(String name) {
+        super(name);
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+
 }

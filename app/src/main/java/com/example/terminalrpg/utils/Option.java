@@ -10,5 +10,5 @@ import com.example.terminalrpg.entities.scene.Scene;
  *
  * @author Adrian
  */
-public record Option(String description, Scene nextScene, String firstMessage, String message) {
+public record Option(String description, Scene nextScene, String neededItem) {
 }

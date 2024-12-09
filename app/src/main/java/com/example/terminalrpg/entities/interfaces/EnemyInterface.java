@@ -4,6 +4,8 @@
  */
 package com.example.terminalrpg.entities.interfaces;
 
+import com.example.terminalrpg.entities.itens.Item;
+
 /**
  *
  * @author Adrian

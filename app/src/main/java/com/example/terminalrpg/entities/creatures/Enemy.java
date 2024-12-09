@@ -5,7 +5,8 @@
 package com.example.terminalrpg.entities.creatures;
 
 import com.example.terminalrpg.entities.interfaces.EnemyInterface;
-import com.example.terminalrpg.entities.interfaces.Item;
+import com.example.terminalrpg.entities.itens.Item;
+
 
 /**
  *
@@ -15,7 +16,7 @@ public class Enemy extends Creature implements EnemyInterface {
     private Item drop;
 
     public Enemy(
-            Item drop,
+
             String type,
             int life,
             int attack,
@@ -30,7 +31,7 @@ public class Enemy extends Creature implements EnemyInterface {
                 speed,
                 luck,
                 name);
-        this.drop = drop;
+        this.drop = null;
     }
 
     public Item getDrop() {
