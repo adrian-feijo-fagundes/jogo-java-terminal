@@ -16,7 +16,7 @@ public class Enemy extends Creature implements EnemyInterface {
     private Item drop;
 
     public Enemy(
-
+            int mana,
             String type,
             int life,
             int attack,
@@ -25,6 +25,7 @@ public class Enemy extends Creature implements EnemyInterface {
             String name) {
 
         super(
+                mana,
                 type,
                 life,
                 attack,

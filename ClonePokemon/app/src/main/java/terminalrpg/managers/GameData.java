@@ -35,11 +35,11 @@ public class GameData {
 
     // Método para inicializar todas as cenas
     private void initializeItens() {               
-        Consumable potion = new Consumable("Pocao pequena");
-        Equipable initialWeapon = new Equipable("Espada");
-        initialWeapon.setDescription("Uma espada simples e um pouco velha mas com a lamina mantém o corte");
-        initialWeapon.setBonus(10);
-        itens.put(potion.getName(), potion);
+        // Consumable potion = new Consumable("Pocao pequena");
+        // Equipable initialWeapon = new Equipable("Espada");
+        // initialWeapon.setDescription("Uma espada simples e um pouco velha mas com a lamina mantém o corte");
+        // initialWeapon.setBonus(10);
+        // itens.put(potion.getName(), potion);
     }
     private void initializeScenes() {
         Scene room1 = new Scene("Sala 01");
@@ -104,10 +104,10 @@ public class GameData {
     }
 
     // Método para navegar pela cena atual e para a próxima cena
-    public void startGame(Scanner sc, Player player, GameState state) {
+    public void startGame(Scanner sc, GameState state, PlayerManager playerManager) {
         while (currentScene != null) {
             System.out.println("-----------------\n");            
-            currentScene = currentScene.startEvent(sc, player, state);
+            currentScene = currentScene.startEvent(sc, playerManager.player, state, playerManager);
         }
     }
 }

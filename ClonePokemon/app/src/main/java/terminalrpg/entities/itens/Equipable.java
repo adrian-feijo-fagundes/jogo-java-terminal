@@ -10,10 +10,24 @@ package terminalrpg.entities.itens;
  */
 public class Equipable extends Item {
     private String equipType;
+    private int bonusAttack;
+    private int bonusDefense;
+    private int bonusMana;
+    private int bonusSpeed;
+    private int bonusLuck;
 
 
-    public Equipable(String name) {
-        super(name, "Equipamento");
+    public Equipable(
+        String equipType,
+        String type,
+        String name,
+        int bonusAttack,
+        int bonusDefense,
+        int bonusMana,
+        int bonusSpeed,
+        int bonusLuck
+        ) {
+        super(name, type);
     }
 
     public String getEquipType() {
@@ -24,6 +38,42 @@ public class Equipable extends Item {
         this.equipType = equipType;
     }
 
+    public int getBonusAttack() {
+        return bonusAttack;
+    }
 
+    public void setBonusAttack(int attack) {
+        this.bonusAttack = attack;
+    }
+
+    public int getBonusDefense() {
+        return bonusDefense;
+    }
+
+    public void setBonusDefense(int defense) {
+        this.bonusDefense = defense;
+    }
+
+    public int getBonusMana() {
+        return bonusMana;
+    }
+
+    public void setBonusMana(int mana) {
+        this.bonusMana = mana;
+    }
+    public int getBonusSpeed() {
+        return bonusSpeed;
+    }
+
+    public void setBonusSpeed(int speed) {
+        this.bonusSpeed = speed;
+    }
+    public int getBonusLuck() {
+        return bonusLuck;
+    }
+
+    public void setBonusLuck(int luck) {
+        this.bonusLuck = luck;
+    }
 
 }

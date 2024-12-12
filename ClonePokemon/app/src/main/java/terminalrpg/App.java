@@ -15,7 +15,8 @@ public class App {
             PlayerManager manager = new PlayerManager(sc);
             GameState state = new GameState();
             GameData game = new GameData();  
-            game.startGame(sc, manager.player, state);
+            game.startGame(sc, state, manager);
         }
+        
     }   
 }

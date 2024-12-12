@@ -6,6 +6,8 @@ package terminalrpg.entities.scene;
 
 import terminalrpg.entities.Entity;
 import terminalrpg.entities.creatures.Player;
+import terminalrpg.managers.PlayerManager;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,96 +26,100 @@ public class Scene extends Entity {
     private final List<Option> options;
 
     private String neededItem;
+    private String neededItemMessage;
 
     public Scene(String name) {
         super(name);
         this.messages = new ArrayList<>();
         this.firstMessages = new ArrayList<>();
         this.options = new ArrayList<>();
+        this.neededItem = "";
     }
 
-    public String getNeededItem() {
-        return neededItem;
-    }
-
-    public void setNeededItem(String neededItem) {
-        this.neededItem = neededItem;
-    }
-
-    public List<Option> getOptions() {
-        return options;
-    }
-
+    public String       getNeededItem()                         { return neededItem;                                                      }
+    public void         setNeededItem(String neededItem)        { this.neededItem = neededItem;                                           }
+    public String       getNeededItemMessage()                  { return neededItemMessage;                                               }
+    public void         setNeededItemMessage(String neededItem) { this.neededItem = neededItemMessage;                                    }
+    public List<Option> getOptions()                            { return options;                                                         }
+    public Scene        getLastScene()                          { return this.getOptions().get(this.getOptions().size() - 1).nextScene(); }
+    
     public void addOption(String optionDescription, Scene nextScene) {
         this.options.add(new Option(optionDescription, nextScene));
     }
-
     public void addMessages(String[] newMessages) {
         this.messages.addAll(Arrays.asList(newMessages));
     }
-
+    public boolean isFirstVisit(GameState gameState) {
+        return !gameState.hasVisited(this.getId());
+    }
     public void addFirstMessages(String[] newFirstMessages) {
         this.firstMessages.addAll(Arrays.asList(newFirstMessages));
     }
     public List<String> currentMessages(boolean isFirstVisit) {
         return isFirstVisit ? this.firstMessages : this.messages;
     }
-    public boolean isFirstVisit(GameState gameState) {
-        return !gameState.hasVisited(this.getId());
-    }
+
     public void showMessages(Scanner sc, List<String> currentMessages) {
-
         for (int i = 0; i < currentMessages.size(); i++) {
-
-            if (i < currentMessages.size() - 1) {
                 System.out.println(currentMessages.get(i) + "\n");
-
                 Message.enter("");
                 sc.nextLine();// Aguarda o jogador pressionar Enter
-            } else {
-                System.out.println(currentMessages.get(i));
-            }
+
         }
     }
-    public Scene showOptions(Scanner sc) {
-        if (!this.options.isEmpty()) {
-            System.out.println("\nO que você deseja fazer?");
-            for (int i = 0; i < this.options.size(); i++) {
-                System.out.printf("%d. %s\n", i + 1, this.options.get(i).description());
-            }
 
+    public boolean haveItem(Player player) {
+        if (this.neededItem == "") {
+            return true;
+        }
+        return null != player.getItem(this.neededItem);
+    }
+
+    public Scene showOptions(Scanner sc, PlayerManager playerManager, List<String> currentMessages ) {
+        if (!this.options.isEmpty()) { 
             // Captura e valida a escolha do jogador
-            int escolha = -1;
-            while (escolha < 1 || escolha > this.options.size()) {
-                System.out.print("\nEscolha uma opção: ");
-                try {
-                    escolha = sc.nextInt();
-                    sc.nextLine();
-                } catch (Exception e) {
-                    sc.nextLine(); // Limpa a entrada inválida
-                    System.out.println("Por favor, insira um número válido.");
+            int choice = -1;
+            while (true) {
+                System.out.println("\nO que você deseja fazer?");
+                for (int i = 0; i < this.options.size(); i++) {
+                    System.out.printf("%d. %s\n", i + 1, this.options.get(i).description());
                 }
+                System.out.println("0. ver menu informativo\n ");
+                System.out.print("\nEscolha uma opção: ");
+                choice = sc.nextInt();
+
+                if (choice > 0 && choice <= this.options.size()) {
+                    break;
+                } else if (choice == 0) {
+                    playerManager.menu(sc, currentMessages.get(currentMessages.size() - 1));
+                } else {
+                    System.out.println("Escolha uma opção válida");
+                }
+
             }
             // Retorna a próxima cena conforme a escolha
-            return this.options.get(escolha - 1).nextScene();
+            return this.options.get(choice - 1).nextScene();
         }
         System.out.println("\nNão há mais opções nesta cena. Fim de jogo.");
         return null;
     }
-    public Scene startEvent(Scanner sc, Player player, GameState gameState) {
 
+    public Scene startEvent(Scanner sc, Player player, GameState gameState, PlayerManager playerManager) {
+        if (!haveItem(player)) {
+            System.out.println(neededItemMessage);
+            Message.enter("Para voltar");
+            sc.nextLine();
+            return getLastScene();
+        }
+ 
         showMessages(sc, currentMessages(isFirstVisit(gameState)));
         // Marca a cena como visitada no GameState
         if (isFirstVisit(gameState)) {
             gameState.addToVisited(this.getId());
         }
         // Exibe as opções disponíveis
-        Scene nextScene = showOptions(sc);
+        Scene nextScene = showOptions(sc, playerManager, currentMessages(isFirstVisit(gameState)));
         return nextScene;
-        // Caso não haja opções
+    }
 
-    }
-    public boolean haveItem(Player player, Option option) {
-        return null != player.getItem(this.neededItem);
-    }
 }

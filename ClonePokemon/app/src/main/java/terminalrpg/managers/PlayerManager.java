@@ -9,6 +9,7 @@ import terminalrpg.entities.creatures.playable.Mage;
 import terminalrpg.entities.creatures.playable.Warrior;
 import terminalrpg.entities.scene.Scene;
 import terminalrpg.utils.Dice;
+import terminalrpg.utils.Message;
 
 public class PlayerManager {
     public Player player;
@@ -24,8 +25,7 @@ public class PlayerManager {
             "Ah, olá! Finalmente você chegou. Este é o início da sua jornada como aventureiro, não é? Que emocionante! ",
             "Você está prestes a se registrar na famosa Guilda dos Aventureiros, um lugar onde grandes histórias têm início e onde bravos heróis encontram seu destino.",
             "Mas antes de começar sua jornada, precisamos cuidar de algumas formalidades. Afinal, todo grande aventureiro precisa estar devidamente preparado, certo?",
-            "Venha, vamos entrar. Logo, você estará pronto para enfrentar desafios e criar sua própria lenda!",
-            ""
+            "Venha, vamos entrar. Logo, você estará pronto para enfrentar desafios e criar sua própria lenda!"
 
         ));
         System.out.println("Recepcionista:");
@@ -70,7 +70,6 @@ public class PlayerManager {
                 case 3:
                 player = new Archer(mana, life, attack, speed, luck, name);
         }
-        System.out.println(player.getInfo());
         sc.nextLine();
         startAdventure.showMessages(sc, List.of(
             "Agora, para concluir seu cadastro na Guilda e se tornar oficialmente um aventureiro, precisará realizar um desafio. Não se preocupe, é uma tarefa simples, mas importante para provar sua capacidade.",
@@ -80,9 +79,11 @@ public class PlayerManager {
         return player;
     }
 
-    public void menu(Scanner sc, GameData gameData) {
-        System.out.println("--------MENU-------");
-
-
+    public void menu(Scanner sc, String message) {
+        this.player.getInfo();
+        Message.enter("para voltar");
+        sc.nextLine();
+        sc.nextLine();
+        System.out.println(message);
     }
 }

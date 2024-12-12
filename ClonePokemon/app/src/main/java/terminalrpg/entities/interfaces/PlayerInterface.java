@@ -4,16 +4,19 @@
  */
 package terminalrpg.entities.interfaces;
 
-import terminalrpg.entities.itens.Item;
+import java.util.Scanner;
+
+import terminalrpg.entities.creatures.Creature;
+import terminalrpg.entities.itens.Consumable;
 
 /**
  *
  * @author Adrian
  */
 public interface PlayerInterface {
-    public void useItem(Item item);
+    public void useItem(Scanner sc);
 
-    public void useSpecialAbility();
+    public void useSpecialAbility(Creature other);
 
     public boolean flee();
 }

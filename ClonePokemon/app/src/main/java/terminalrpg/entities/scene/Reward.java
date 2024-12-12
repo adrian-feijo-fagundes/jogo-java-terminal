@@ -7,6 +7,7 @@ package terminalrpg.entities.scene;
 import java.util.Scanner;
 import terminalrpg.entities.creatures.Player;
 import terminalrpg.entities.itens.Item;
+import terminalrpg.managers.PlayerManager;
 import terminalrpg.utils.GameState;
 import terminalrpg.utils.Message;
 
@@ -21,16 +22,11 @@ public class Reward extends Scene {
         super(name);
     }
 
-    public Item getReward() {
-        return reward;
-    }
-
-    public void setReward(Item reward) {
-        this.reward = reward;
-    }
+    public Item getReward()             { return reward;        }
+    public void setReward(Item reward)  { this.reward = reward; }
     
     @Override
-    public Scene startEvent(Scanner sc, Player player, GameState gameState) {
+    public Scene startEvent(Scanner sc, Player player, GameState gameState, PlayerManager playerManager) {
 
         showMessages(sc, currentMessages(isFirstVisit(gameState)));
         // Marca a cena como visitada no GameState

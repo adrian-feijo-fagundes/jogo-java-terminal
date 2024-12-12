@@ -4,6 +4,7 @@
  */
 package terminalrpg.entities.creatures.playable;
 
+import terminalrpg.entities.creatures.Creature;
 import terminalrpg.entities.creatures.Player;
 
 /**
@@ -21,13 +22,37 @@ public class Mage extends Player {
             String name) {
 
         super(
-                mana,
+                mana + 15,
                 "Mage",
-                life,
-                attack,
-                speed,
-                luck,
+                life + 5,
+                attack + 5,
+                speed + 5,
+                luck + 10,
                 name);
+        this.setSpecialHabilityName("Explosão Arcana");
+        this.setSpecialHabilityDescription("Uma rajada de pura energia \narcana, liberada diretamente no alvo. O ataque causa dano mediano com um \ncusto baixo de mana, sendo uma habilidade confiável e eficiente para \nconjuradores em combate.");
+    }
+
+    @Override
+    public void useSpecialAbility(Creature other) {
+            
+            int manaCost = 1;
+
+            if (!hasMana(manaCost)) {
+                System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
+                attack(other);
+                return;
+            }
+            System.out.println("Voce usa " + manaCost + "de mana então ataca com ");
+            System.out.println(this.getSpecialHabilityName());
+            
+
+            int damage = (this.getTotalAttack() * 2 + 5);
+            System.out.println("O dano total é de: " +  damage);
+            int newLife = other.getLife() -  damage;
+            System.out.println("A vida de " + other.getName() + "foi de " + other.getLife() + " para " + newLife);
+    
+            other.setLife(newLife);
     }
 
 }

@@ -74,3 +74,36 @@ Menu Usar itens:
     Exemplo: 
         1. Poção de Vida    "Recupera 50 de vida"
         2. Elixir de Mana   "Recupera 50 de mana"
+
+
+
+Pensando no combate e nos itens:
+
+Jogador pode ter itens equipados
+
+quando batalha considera os bonus
+
+quais tipos de bonus tem no jogo:
+
+    attack          posso usar os proprios      equipamentos
+    defesa
+    mana
+    velocidade
+    sorte
+
+se tem item equipado considera os bonus
+
+weapon 
+armor
+acessory
+
+
+
+Tiro do Crepúsculo (Arqueiro)
+"Uma flecha envolta em energia crepuscular, disparada com precisão letal. Ao atingir o alvo, concentra toda a força em um único ponto, causando dano mediano. Com um custo médio de mana, é uma habilidade equilibrada para ataques à distância."
+
+Explosão Arcana (Mago)
+"Uma rajada de pura energia arcana, liberada diretamente no alvo. O ataque causa dano mediano com um custo baixo de mana, sendo uma habilidade confiável e eficiente para conjuradores em combate."
+
+Impacto Colossal (Guerreiro)
+"O guerreiro concentra toda sua força em um único golpe devastador, esmagando o alvo com uma força tremenda. O ataque consome uma alta quantidade de mana, mas causa um dano massivo, perfeito para finalizar inimigos poderosos."
