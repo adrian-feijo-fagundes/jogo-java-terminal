@@ -4,6 +4,8 @@
  */
 package terminalrpg.entities.interfaces;
 
+import java.util.Scanner;
+
 import terminalrpg.entities.creatures.Creature;
 
 /**
@@ -11,9 +13,9 @@ import terminalrpg.entities.creatures.Creature;
  * @author Adrian
  */
 public interface CreatureInterface {
-    public void attack(Creature other);
+    public void attack(Scanner sc, Creature other);
 
-    public boolean evade(int difficult);
+    public boolean evade(Scanner sc, int difficult);
 
-    public int criticalHit();
+    public int criticalHit(Scanner sc);
 }

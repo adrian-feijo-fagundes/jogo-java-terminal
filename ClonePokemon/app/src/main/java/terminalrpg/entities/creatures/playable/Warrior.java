@@ -4,6 +4,8 @@
  */
 package terminalrpg.entities.creatures.playable;
 
+import java.util.Scanner;
+
 import terminalrpg.entities.creatures.Creature;
 import terminalrpg.entities.creatures.Player;
 
@@ -33,12 +35,12 @@ public class Warrior extends Player {
     }
 
     @Override
-    public void useSpecialAbility(Creature other) {
+    public void useSpecialAbility( Scanner sc, Creature other) {
             int manaCost = 5;
 
             if (!hasMana(manaCost)) {
                 System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
-                attack(other);
+                attack(sc ,other);
                 return;
             }
             System.out.println("Voce usa " + manaCost + "de mana então ataca com ");

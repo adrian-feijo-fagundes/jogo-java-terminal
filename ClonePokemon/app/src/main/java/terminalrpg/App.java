@@ -11,12 +11,13 @@ import terminalrpg.utils.GameState;
 public class App {
 
     public static void main(String[] args) {
-        try (Scanner sc = new Scanner(System.in)) {
-            PlayerManager manager = new PlayerManager(sc);
-            GameState state = new GameState();
-            GameData game = new GameData();  
-            game.startGame(sc, state, manager);
-        }
+        Scanner sc = new Scanner(System.in);
         
+        PlayerManager manager = new PlayerManager(sc);
+        GameState state = new GameState();
+        GameData game = new GameData();  
+        game.startGame(sc, state, manager);
+        
+        sc.close();
     }   
 }

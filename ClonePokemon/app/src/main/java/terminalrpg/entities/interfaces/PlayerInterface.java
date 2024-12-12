@@ -7,7 +7,6 @@ package terminalrpg.entities.interfaces;
 import java.util.Scanner;
 
 import terminalrpg.entities.creatures.Creature;
-import terminalrpg.entities.itens.Consumable;
 
 /**
  *
@@ -16,7 +15,7 @@ import terminalrpg.entities.itens.Consumable;
 public interface PlayerInterface {
     public void useItem(Scanner sc);
 
-    public void useSpecialAbility(Creature other);
+    public void useSpecialAbility(Scanner sc, Creature other);
 
-    public boolean flee();
+    public boolean flee(Scanner sc);
 }

@@ -28,6 +28,12 @@ public class Equipable extends Item {
         int bonusLuck
         ) {
         super(name, type);
+        this.bonusAttack  = bonusAttack;
+        this.bonusDefense  = bonusDefense;
+        this.bonusMana  = bonusMana;
+        this.bonusSpeed  = bonusSpeed;
+        this.bonusLuck  = bonusLuck;
+
     }
 
     public String getEquipType() {

@@ -28,24 +28,24 @@ public abstract class Dice {
         return total;
     }
 
-    public static int percent() {
+    public static int percent(Scanner sc) {
         int total;
-        try (Scanner sc = new Scanner(System.in)) {
-            Message.dice(sc, 2);
-            System.out.println("1 vez rolando o dado");
-            Message.enter("para rolar o d10");
-            int r1 = (int) (Math.random() * 10) + 1;
-            System.out.println("O resultado foi: " + r1);
-            sc.nextLine();
-            System.out.println("2 vez rolando o dado");
-            Message.enter("para rolar o d10");
-            int r2 = (int) (Math.random() * 10) + 1;
-            System.out.println("O resultado foi: " + r2);
-            sc.nextLine();
-            Message.enter("");
-            sc.nextLine();
-            total = (r1 * 10) + r2;
-        }
+        
+        Message.dice(sc, 2);
+        System.out.println("1 vez rolando o dado");
+        Message.enter("para rolar o d10");
+        int r1 = (int) (Math.random() * 10) + 1;
+        System.out.println("O resultado foi: " + r1);
+        sc.nextLine();
+        System.out.println("2 vez rolando o dado");
+        Message.enter("para rolar o d10");
+        int r2 = (int) (Math.random() * 10) + 1;
+        System.out.println("O resultado foi: " + r2);
+        sc.nextLine();
+        Message.enter("");
+        sc.nextLine();
+        total = (r1 * 10) + r2;
+        
         return total;
     }
 }

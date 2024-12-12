@@ -35,7 +35,6 @@ public class Combat extends Scene {
         // para considerar os bonus de equipamentos
         player.calcTotalStatus();
 
-        this.creature.calcTotalStatus();
         System.out.println("Combate Iniciou");
         boolean combat = true;
         do {
@@ -55,15 +54,15 @@ public class Combat extends Scene {
                     System.out.println("Atacou");
                     if (player.attackPriority(creature)) {
                         // O jogador é mais rapido
-                        player.attack(creature);
+                        player.attack(sc, creature);
                         if (!creature.isDead()) {
-                            creature.attack(player);
+                            creature.attack(sc, player);
                         }
                     } else {
                         // O inimigo é mais rapido
-                        creature.attack(player);
+                        creature.attack(sc, player);
                         if (!player.isDead()) {
-                            player.attack(creature);
+                            player.attack(sc, creature);
                         }
                     }
                 }
@@ -71,32 +70,33 @@ public class Combat extends Scene {
                     System.out.println("Usou Habilidade especial\n");
                     if (player.attackPriority(creature)) {
                         // O jogador é mais rapido
-                        player.useSpecialAbility(creature);
+                        player.useSpecialAbility(sc, creature);
                         if (!creature.isDead()) {
-                            creature.attack(player);
+                            creature.attack(sc, player);
                         }
                     } else {
                         // O inimigo é mais rapido
-                        creature.attack(player);
+                        creature.attack(sc, player);
                         if (!player.isDead()) {
-                            player.useSpecialAbility(creature);
+                            player.useSpecialAbility(sc, creature);
                         }
                     }
                 }
                 case 3 -> {
                     if (player.hasConsumables()) {
                         player.useItem(sc);
+                        creature.attack(sc, player);
                     } else {
                         System.out.println("Você não possui nenhum item consumivel");
                     }
                 }
                 case 4 -> {
-                    if (player.flee()) {
+                    if (player.flee(sc)) {
                         System.out.println("Conseguiu fugir!");
                         combat = false;
                     } else {
                         System.out.println("Não conseguiu fugir!");
-                        creature.attack(player);
+                        creature.attack(sc , player);
                     }
                 }
                 default -> System.out.println("Escolha uma opção valida");

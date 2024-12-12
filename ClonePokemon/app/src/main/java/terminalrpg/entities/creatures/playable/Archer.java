@@ -4,6 +4,8 @@
  */
 package terminalrpg.entities.creatures.playable;
 
+import java.util.Scanner;
+
 import terminalrpg.entities.creatures.Creature;
 import terminalrpg.entities.creatures.Player;
 
@@ -33,14 +35,14 @@ public class Archer extends Player {
         this.setSpecialHabilityName("Tiro do Crepúsculo");
         this.setSpecialHabilityDescription("Uma flecha envolta em energia crepuscular, disparada com precisão letal. Ao atingir o alvo, concentra toda a força em um único ponto, causando dano mediano. Com um custo médio de mana, é uma habilidade equilibrada para ataques à distância.");
     }
-    
+
     @Override
-    public void useSpecialAbility(Creature other) {
+    public void useSpecialAbility(Scanner sc,Creature other) {
             int manaCost = 2;
 
             if (!hasMana(manaCost)) {
                 System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
-                attack(other);
+                attack(sc, other);
                 return;
             }
             System.out.println("Voce usa " + manaCost + "de mana então ataca com ");
