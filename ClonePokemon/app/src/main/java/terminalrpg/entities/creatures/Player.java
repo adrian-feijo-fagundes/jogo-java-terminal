@@ -91,7 +91,7 @@ public class Player extends Creature implements PlayerInterface {
     }
 
     public boolean hasEquipment() {
-        return this.equipments.size() > 0;
+        return !(this.equipments.size() > 0);
     }
 
     public void addEquipment(Equipable equipment) {
@@ -105,7 +105,7 @@ public class Player extends Creature implements PlayerInterface {
         int bonusSpeed = 0;
         int bonusLuck = 0;
 
-        if (!hasEquipment()) {
+        if (hasEquipment()) {
             for (Equipable equipment : this.equipments) {
                 bonusAttack += equipment.getBonusAttack();
                 bonusDefense += equipment.getBonusDefense();
