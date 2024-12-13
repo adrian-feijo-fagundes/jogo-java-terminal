@@ -4,12 +4,12 @@
  */
 package terminalrpg.entities.interfaces;
 
-import terminalrpg.entities.itens.Item;
+import terminalrpg.entities.creatures.Player;
 
 /**
  *
  * @author Adrian
  */
 public interface EnemyInterface {
-    public Item drop();
+    public void drop(Player player);
 }

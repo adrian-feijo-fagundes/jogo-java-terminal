@@ -10,14 +10,12 @@ import terminalrpg.entities.Entity;
  *
  * @author Adrian
  */
-public class Item extends Entity{
+public class Item extends Entity {
     private String description;
-    private final String type;
     private int bonus;
-    
-    public Item(String name, String type) {
+
+    public Item(String name) {
         super(name);
-        this.type = type;
         this.description = "";
     }
 
@@ -37,11 +35,7 @@ public class Item extends Entity{
         this.bonus = bonus;
     }
 
-    public String getType() {
-        return type;
-    }
-    
     public String getInfo() {
-        return String.format("%s %s", this.getName(), this.getType());
+        return String.format(this.getName());
     }
 }

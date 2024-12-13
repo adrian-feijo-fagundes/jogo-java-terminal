@@ -13,8 +13,9 @@ import terminalrpg.entities.creatures.Player;
 public class Consumable extends Item {
     private int quantity;
     private String bonusType;
+
     public Consumable(String name, String bonusType, int bonus) {
-        super(name, "Consumivel");
+        super(name);
         this.setBonus(bonus);
         this.quantity = 1;
     }
@@ -40,9 +41,9 @@ public class Consumable extends Item {
             }
         }
     }
-    
+
     @Override
     public String getInfo() {
-        return this.getName() + "   bonus: " + this.bonusType + "  +" + this.getBonus() + " qtd:" + this.quantity; 
+        return this.getName() + "   bonus: " + this.bonusType + "  +" + this.getBonus() + " qtd:" + this.quantity;
     }
 }

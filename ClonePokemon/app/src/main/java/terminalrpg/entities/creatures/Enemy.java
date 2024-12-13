@@ -5,8 +5,8 @@
 package terminalrpg.entities.creatures;
 
 import terminalrpg.entities.interfaces.EnemyInterface;
+import terminalrpg.entities.itens.Equipable;
 import terminalrpg.entities.itens.Item;
-
 
 /**
  *
@@ -14,16 +14,18 @@ import terminalrpg.entities.itens.Item;
  */
 public class Enemy extends Creature implements EnemyInterface {
     private Item drop;
+    private Equipable dropMage;
+    private Equipable dropWarrior;
+    private Equipable dropArcher;
 
     public Enemy(
-            int mana,
             String type,
+            String name,
+            int mana,
             int life,
             int attack,
             int speed,
-            int luck,
-            String name) {
-
+            int luck) {
         super(
                 mana,
                 type,
@@ -35,16 +37,41 @@ public class Enemy extends Creature implements EnemyInterface {
         this.drop = null;
     }
 
-    public Item getDrop() {
-        return drop;
-    }
-
     public void setDrop(Item drop) {
         this.drop = drop;
     }
 
+    public void setDropEquipment(Equipable drop) {
+        switch (drop.getEquipType()) {
+            case "Mage" -> {
+                this.dropMage = drop;
+            }
+            case "Warrior" -> {
+                this.dropWarrior = drop;
+            }
+            case "Archer" -> {
+                this.dropMage = drop;
+            }
+        }
+    }
+
     @Override
-    public Item drop() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void drop(Player player) {
+        if (this.drop == null)
+            return;
+
+        switch (player.getType()) {
+            case "Mage" -> {
+                player.addEquipment(dropMage);
+            }
+            case "Warrior" -> {
+                player.addEquipment(dropWarrior);
+            }
+            case "Archer" -> {
+                player.addEquipment(dropArcher);
+            }
+        }
+        System.out.println("O item " + this.drop.getName() + " foi encontrado!");
+        player.addItem(drop);
     }
 }

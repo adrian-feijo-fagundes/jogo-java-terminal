@@ -29,9 +29,9 @@ public class Combat extends Scene {
     public boolean wasDefeated(GameState gameState) {
         return gameState.defeatEnemy(creature.getId());
     }
-    
+
     public void startBattle(Scanner sc, Player player) {
-        // Faz o calculo dos status do jogador no inicio do combate 
+        // Faz o calculo dos status do jogador no inicio do combate
         // para considerar os bonus de equipamentos
         player.calcTotalStatus();
 
@@ -41,14 +41,14 @@ public class Combat extends Scene {
             System.out.println("\n------------------------------------------");
             System.out.println("-                 BATALHA                -");
             System.out.println("------------------------------------------");
-            System.out.println(player.getName() + " HP: " + player.getLife());
+            System.out.println(player.getName() + " HP: " + player.getLife() + " MANA: " + player.getMana());
             System.out.println(creature.getTypeName() + " HP: " + creature.getLife());
             System.out.println("------------------------------------------");
             System.out.println("1.Atacar        2.Usar habilidade");
             System.out.println("3.Item          4.fugir");
             System.out.println("------------------------------------------");
             System.out.print("\nEscolha uma opção: ");
-            int choice = sc.nextInt(); 
+            int choice = sc.nextInt();
             switch (choice) {
                 case 1 -> {
                     System.out.println("Atacou");
@@ -96,7 +96,7 @@ public class Combat extends Scene {
                         combat = false;
                     } else {
                         System.out.println("Não conseguiu fugir!");
-                        creature.attack(sc , player);
+                        creature.attack(sc, player);
                     }
                 }
                 default -> System.out.println("Escolha uma opção valida");
@@ -107,7 +107,6 @@ public class Combat extends Scene {
         } while (combat);
     }
 
-
     @Override
     public Scene startEvent(Scanner sc, Player player, GameState gameState, PlayerManager playerManager) {
         if (!haveItem(player)) {
@@ -116,7 +115,7 @@ public class Combat extends Scene {
             sc.nextLine();
             return getLastScene();
         }
-        
+
         showMessages(sc, currentMessages(isFirstVisit(gameState)));
         // Marca a cena como visitada no GameState
         if (isFirstVisit(gameState)) {
@@ -131,19 +130,23 @@ public class Combat extends Scene {
         if (player.isDead()) {
             return gameOver;
         }
-        if (creature.isDead()) {
+        if (creature.isDead() && !wasDefeated(gameState)) {
             System.out.println("Você conseguiu derrotar " + creature.getType() + " " + creature.getName());
 
             Message.enter("");
             sc.nextLine();
 
-            creature.drop();
+            creature.drop(player);
 
             Message.enter("");
             sc.nextLine();
             // Marca o inimigo como derrotado
             gameState.addDefeatedEnemy(creature.getId());
 
+            Scene nextScene = showOptions(sc, playerManager, currentMessages(isFirstVisit(gameState)));
+            return nextScene;
+        }
+        if (creature.isDead() && wasDefeated(gameState)) {
             Scene nextScene = showOptions(sc, playerManager, currentMessages(isFirstVisit(gameState)));
             return nextScene;
         }

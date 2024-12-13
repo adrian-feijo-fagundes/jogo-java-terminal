@@ -16,23 +16,20 @@ public class Equipable extends Item {
     private int bonusSpeed;
     private int bonusLuck;
 
-
     public Equipable(
-        String equipType,
-        String type,
-        String name,
-        int bonusAttack,
-        int bonusDefense,
-        int bonusMana,
-        int bonusSpeed,
-        int bonusLuck
-        ) {
-        super(name, type);
-        this.bonusAttack  = bonusAttack;
-        this.bonusDefense  = bonusDefense;
-        this.bonusMana  = bonusMana;
-        this.bonusSpeed  = bonusSpeed;
-        this.bonusLuck  = bonusLuck;
+            String equipType,
+            String name,
+            int bonusAttack,
+            int bonusDefense,
+            int bonusMana,
+            int bonusSpeed,
+            int bonusLuck) {
+        super(name);
+        this.bonusAttack = bonusAttack;
+        this.bonusDefense = bonusDefense;
+        this.bonusMana = bonusMana;
+        this.bonusSpeed = bonusSpeed;
+        this.bonusLuck = bonusLuck;
 
     }
 
@@ -67,6 +64,7 @@ public class Equipable extends Item {
     public void setBonusMana(int mana) {
         this.bonusMana = mana;
     }
+
     public int getBonusSpeed() {
         return bonusSpeed;
     }
@@ -74,6 +72,7 @@ public class Equipable extends Item {
     public void setBonusSpeed(int speed) {
         this.bonusSpeed = speed;
     }
+
     public int getBonusLuck() {
         return bonusLuck;
     }

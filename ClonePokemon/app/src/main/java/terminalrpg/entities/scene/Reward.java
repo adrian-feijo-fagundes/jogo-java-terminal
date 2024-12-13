@@ -22,9 +22,14 @@ public class Reward extends Scene {
         super(name);
     }
 
-    public Item getReward()             { return reward;        }
-    public void setReward(Item reward)  { this.reward = reward; }
-    
+    public Item getReward() {
+        return reward;
+    }
+
+    public void setReward(Item reward) {
+        this.reward = reward;
+    }
+
     @Override
     public Scene startEvent(Scanner sc, Player player, GameState gameState, PlayerManager playerManager) {
 
@@ -32,7 +37,7 @@ public class Reward extends Scene {
         // Marca a cena como visitada no GameState
         if (isFirstVisit(gameState)) {
             player.addItem(reward);
-            System.out.println(reward.getDescription() + "\n");
+            System.out.println("Voce encontrou: " + reward.getName() + "\n");
             gameState.addToVisited(this.getId());
         }
         System.out.println(this.getOptions().get(0).description());
@@ -42,7 +47,5 @@ public class Reward extends Scene {
         return this.getOptions().get(0).nextScene();
 
     }
-    
-    
-    
+
 }
