@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 import terminalrpg.entities.creatures.Creature;
 import terminalrpg.entities.creatures.Player;
+import terminalrpg.utils.Message;
+import terminalrpg.utils.Screen;
 
 /**
  *
@@ -33,22 +35,24 @@ public class Mage extends Player {
                 name);
         this.setSpecialHabilityName("Explosão Arcana");
         this.setSpecialHabilityDescription(
-                "Uma rajada de pura energia arcana, liberada diretamente no \nalvo. O ataque causa dano mediano com um custo baixo de \nmana, sendo uma habilidade confiável e eficiente para \nconjuradores em combate.");
+                "\nUma rajada de pura energia arcana, liberada \ndiretamente no alvo. O ataque causa dano mediano \ncom um custo baixo de mana, sendo \numa habilidade confiável e eficiente para \nconjuradores em combate.");
     }
 
     @Override
     public void useSpecialAbility(Scanner sc, Creature other) {
 
         int manaCost = 1;
-
+        Screen.clear();
         if (!hasMana(manaCost)) {
             System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
             attack(sc, other);
             return;
         }
         System.out.println("Voce usa " + manaCost + " de mana então ataca com " + this.getSpecialHabilityName());
-        System.out.println(this.getSpecialHabilityName());
 
+        Message.enter("");
+        sc.nextLine();
+        
         int damage = (this.getTotalAttack() * 2 + 5);
         System.out.println("O dano total é de: " + damage);
         int newLife = other.getLife() - damage;

@@ -167,7 +167,6 @@ public class GameData {
     // Método para navegar pela cena atual e para a próxima cena
     public void startGame(Scanner sc, GameState state, PlayerManager playerManager) {
         while (currentScene != null) {
-            System.out.println("-----------------\n");
             currentScene = currentScene.startEvent(sc, playerManager.player, state, playerManager);
         }
     }

@@ -61,12 +61,15 @@ public class Enemy extends Creature implements EnemyInterface {
         }
         if (dropMage != null && Objects.equals(player.getType(), "Mage")) {
             player.addEquipment(dropMage);
+            System.out.println(this.dropMage.getName() + " foi encontrado!");
         }
         if (dropArcher != null && Objects.equals(player.getType(), "Archer")) {
             player.addEquipment(dropArcher);
+            System.out.println(this.dropArcher.getName() + " foi encontrado!");
         }
         if (dropWarrior != null && Objects.equals(player.getType(), "Warrior")) {
             player.addEquipment(dropWarrior);
+            System.out.println(this.dropWarrior.getName() + " foi encontrado!");
         }
         System.out.println("O item " + this.drop.getName() + " foi encontrado!");
         if (drop instanceof Consumable) {

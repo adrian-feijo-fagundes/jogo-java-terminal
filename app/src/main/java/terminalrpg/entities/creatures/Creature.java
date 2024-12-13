@@ -5,6 +5,9 @@
 package terminalrpg.entities.creatures;
 
 import terminalrpg.entities.interfaces.CreatureInterface;
+import terminalrpg.utils.Message;
+import terminalrpg.utils.Screen;
+
 import java.util.Scanner;
 
 import terminalrpg.entities.Entity;
@@ -133,7 +136,10 @@ public class Creature extends Entity implements CreatureInterface {
 
     @Override
     public void attack(Scanner sc, Creature other) {
-        System.out.println(this.getTypeName() + " Começou a atacar!\n");
+        Screen.clear();
+        System.out.println(this.getTypeName() + " Comecou a atacar!");
+        Message.enter("");
+        sc.nextLine();
         // Verifica se o oponente esquivou
         if (other.evade(sc, this.calcDifficult())) {
             return;
@@ -141,13 +147,17 @@ public class Creature extends Entity implements CreatureInterface {
         int critical = this.criticalHit(sc);
 
         if (critical > 1) {
-            System.out.println("Acertou um ataque crítico");
+            System.out.println(this.getName() + " Acertou um ataque crítico");
+            Message.enter("");
+            sc.nextLine();
         }
 
         int damage = (this.attack * critical) - other.getTotalDefense();
-        System.out.println("O dano total é de: " + damage);
+        System.out.println("O dano total foi de: " + damage);
         int newLife = other.getLife() - damage;
         System.out.println("A vida de " + other.getTypeName() + " foi de " + other.getLife() + " para " + newLife);
         other.setLife(newLife);
+        Message.enter("");
+        sc.nextLine();
     }
 }

@@ -3,6 +3,8 @@ package terminalrpg.entities.creatures.playable;
 import java.util.Scanner;
 import terminalrpg.entities.creatures.Creature;
 import terminalrpg.entities.creatures.Player;
+import terminalrpg.utils.Message;
+import terminalrpg.utils.Screen;
 
 public class Archer extends Player {
 
@@ -25,13 +27,13 @@ public class Archer extends Player {
 
         this.setSpecialHabilityName("Tiro do Crepúsculo");
         this.setSpecialHabilityDescription(
-                " Uma flecha envolta em energia crepuscular, disparada com \nprecisão letal. Ao atingir o alvo, concentra toda a força \nem um único ponto, causando dano mediano.");
+                "\nUma flecha envolta em energia crepuscular, disparada com \nprecisão letal. Ao atingir o alvo, concentra toda a força \nem um único ponto, causando dano mediano.");
     }
 
     @Override
     public void useSpecialAbility(Scanner sc, Creature other) {
         int manaCost = 2;
-
+        Screen.clear();
         if (!hasMana(manaCost)) {
             System.out.println(" Voce não tem mana suficiente, então realiza um ataque normal");
             attack(sc, other);
@@ -39,6 +41,8 @@ public class Archer extends Player {
         }
         System.out.println("Voce usa " + manaCost + " de mana então ataca com " + this.getSpecialHabilityName());
 
+        Message.enter("");
+        sc.nextLine();
         int damage = (this.getTotalAttack() * 2 + 5);
         System.out.println("O dano total é de: " + damage);
         int newLife = other.getLife() - damage;

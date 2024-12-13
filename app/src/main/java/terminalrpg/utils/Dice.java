@@ -15,10 +15,8 @@ public abstract class Dice {
         Message.dice(sc, timesToRoll);
         int total = 0;
         for (int i = 0; i < timesToRoll; i++) {
-            System.out.println((i + 1) + " vez rolando o d" + sides);
             int result = (int) (Math.random() * sides) + 1;
-            System.out.println("O resultado foi: " + result + "\n");
-
+            System.out.print("Rolando d" + sides + ", " + (i + 1) + "/" + timesToRoll + " O resultado foi: " + result + "     ");
             Message.enter("");
             sc.nextLine();
             total += result;
@@ -32,20 +30,19 @@ public abstract class Dice {
         int total;
         
         Message.dice(sc, 2);
-        System.out.println("1 vez rolando o dado");
-        Message.enter("para rolar o d10");
         int r1 = (int) (Math.random() * 10) + 1;
-        System.out.println("O resultado foi: " + r1);
+        System.out.print("\nRolando d10, 1/2  O resultado foi: " + r1 + "     ");
+        Message.enter("");
         sc.nextLine();
-        System.out.println("2 vez rolando o dado");
-        Message.enter("para rolar o d10");
         int r2 = (int) (Math.random() * 10) + 1;
-        System.out.println("O resultado foi: " + r2);
-        sc.nextLine();
+        System.out.print("\nRolando d10, 2/2  O resultado foi: " + r2 + "     ");
         Message.enter("");
         sc.nextLine();
         total = (r1 * 10) + r2;
-        
+        System.out.print("Voce conseguiu " + total + " pontos.     ");
+        Message.enter("");
+        sc.nextLine();
+        Screen.clear();
         return total;
     }
 }

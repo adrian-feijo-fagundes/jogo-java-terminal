@@ -11,18 +11,17 @@ import java.util.Scanner;
  * @author Adrian
  */
 public abstract class Message {
-    public static void enter(String message) {
+    public static void enter( String message) {
         if ("".equals(message)) {
-            System.out.println("Pressione enter...");
+            System.out.print("\033[32m" + "press enter... " + "\033[0m");
         } else {
-            System.out.println("Pressione enter " + message);
+            System.out.print("\033[0m" + "press enter... " + message + "\033[0m");
         }
-
     }
 
     public static void dice(Scanner sc, int timesToRoll) {
-        System.out.println("Voce deverá rolar o dado " + timesToRoll + " Vezes.");
-        Message.enter("");
+        System.out.print("\nVoce devera rolar o dado " + timesToRoll + " Vezes.   ");
+        Message.enter( "");
         sc.nextLine();
     }
 }

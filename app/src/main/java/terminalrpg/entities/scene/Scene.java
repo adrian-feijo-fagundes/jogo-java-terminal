@@ -15,6 +15,7 @@ import java.util.Scanner;
 import terminalrpg.utils.GameState;
 import terminalrpg.utils.Message;
 import terminalrpg.utils.Option;
+import terminalrpg.utils.Screen;
 
 /**
  *
@@ -80,7 +81,7 @@ public class Scene extends Entity {
 
     public void showMessages(Scanner sc, List<String> currentMessages) {
         for (String currentMessage : currentMessages) {
-            System.out.println(currentMessage + "\n");
+            System.out.println(currentMessage + "   ");
             Message.enter("");
             sc.nextLine();// Aguarda o jogador pressionar Enter
 
@@ -116,6 +117,7 @@ public class Scene extends Entity {
                 }
 
             }
+            Screen.clear();
             // Retorna a próxima cena conforme a escolha
             return this.options.get(choice - 1).nextScene();
         }
@@ -126,8 +128,10 @@ public class Scene extends Entity {
     public Scene startEvent(Scanner sc, Player player, GameState gameState, PlayerManager playerManager) {
         if (dontHaveItem(player)) {
             System.out.println(neededItemMessage);
-            Message.enter("Para voltar");
+            Message.enter("");
             sc.nextLine();
+            sc.nextLine();
+            Screen.clear();
             return getLastScene();
         }
 

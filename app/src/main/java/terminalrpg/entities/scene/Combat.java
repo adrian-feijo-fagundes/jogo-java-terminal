@@ -35,7 +35,7 @@ public class Combat extends Scene {
         // para considerar os bonus de equipamentos
         player.calcTotalStatus();
 
-        System.out.println("Combate Iniciou");
+        System.out.println(creature.getName() + " ataca voce derrepente ao entrar na sala.");
         boolean combat = true;
         do {
             System.out.println("\n------------------------------------------");
@@ -51,7 +51,6 @@ public class Combat extends Scene {
             int choice = sc.nextInt();
             switch (choice) {
                 case 1 -> {
-                    System.out.println("Atacou");
                     if (player.attackPriority(creature)) {
                         // O jogador é mais rapido
                         player.attack(sc, creature);
@@ -67,7 +66,6 @@ public class Combat extends Scene {
                     }
                 }
                 case 2 -> {
-                    System.out.println("Usou Habilidade especial\n");
                     if (player.attackPriority(creature)) {
                         // O jogador é mais rapido
                         player.useSpecialAbility(sc, creature);
@@ -115,21 +113,10 @@ public class Combat extends Scene {
             sc.nextLine();
             return getLastScene();
         }
-
-        
-       
-
         // Inicia o combate se o inimigo não foi derrotado
         if (!wasDefeated(gameState)) {
             startBattle(sc, player);
         }
-
-        showMessages(sc, currentMessages(isFirstVisit(gameState)));
-        if (isFirstVisit(gameState)) {
-            gameState.addToVisited(this.getId());
-            Message.enter("");
-        }
-        
         // Verifica se o jogador morreu durante o combate
         if (player.isDead()) {
             return gameOver;
@@ -146,8 +133,15 @@ public class Combat extends Scene {
             sc.nextLine();
             // Marca o inimigo como derrotado
             gameState.addDefeatedEnemy(creature.getId());
-
+            showMessages(sc, currentMessages(isFirstVisit(gameState)));
+            if (isFirstVisit(gameState)) {
+                gameState.addToVisited(this.getId());
+            }
             return showOptions(sc, playerManager, currentMessages(isFirstVisit(gameState)));
+        }
+        showMessages(sc, currentMessages(isFirstVisit(gameState)));
+        if (isFirstVisit(gameState)) {
+            gameState.addToVisited(this.getId());
         }
         if (creature.isDead() && wasDefeated(gameState)) {
             return showOptions(sc, playerManager, currentMessages(isFirstVisit(gameState)));

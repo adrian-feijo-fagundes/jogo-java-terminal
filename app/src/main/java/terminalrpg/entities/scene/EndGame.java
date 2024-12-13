@@ -16,7 +16,8 @@ public class EndGame extends Scene {
     public Scene startEvent(Scanner sc, Player player, GameState gameState, PlayerManager playerManager) {
         if (dontHaveItem(player)) {
             System.out.println(this.getNeededItemMessage());
-            Message.enter("Para voltar");
+            Message.enter("");
+            sc.nextLine();
             sc.nextLine();
             return getLastScene();
         }

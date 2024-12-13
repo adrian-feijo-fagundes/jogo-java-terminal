@@ -15,6 +15,8 @@ import terminalrpg.entities.itens.Consumable;
 import terminalrpg.entities.itens.Equipable;
 import terminalrpg.entities.itens.Item;
 import terminalrpg.utils.Dice;
+import terminalrpg.utils.Message;
+import terminalrpg.utils.Screen;
 
 /**
  *
@@ -241,33 +243,26 @@ public class Player extends Creature implements PlayerInterface {
     public boolean evade(Scanner sc, int difficult) {
         int dodgeChance = 100 - (((int) (this.totalLuck * 0.4)) + ((int) (this.getTotalSpeed() * 0.6)) - difficult);
 
-        System.out.println("Para desviar do golpe é necessário conseguir pelo menos " + dodgeChance + " pontos");
+        System.out.println("\nVoce tenta desviar precisa de " + dodgeChance + " pontos.");
 
         int result = Dice.percent(sc);
 
         boolean dodge = result >= dodgeChance;
 
         if (dodge) {
-            System.out.println(this.getTypeName() + "Conseguiu esquivar!");
+            System.out.println(this.getTypeName() + " Conseguiu esquivar!");
         } else {
-            System.out.println(this.getTypeName() + "Não conseguiu esquivar!");
+            System.out.println(this.getTypeName() + " Não conseguiu esquivar!");
         }
         return dodge;
     }
 
     @Override
-    public int criticalHit(Scanner sc) {
-        int randomValue = Dice.percent(sc);
-
-        if (randomValue <= this.totalLuck) {
-            return 2; // Multiplicador crítico
-        }
-        return 1; // Ataque normal
-    }
-
-    @Override
     public void attack(Scanner sc, Creature other) {
-        System.out.println(this.getTypeName() + "Começou a atacar!\n");
+        Screen.clear();
+        System.out.println(this.getTypeName() + " Começou a atacar!");
+        Message.enter("");
+        sc.nextLine();
         // Verifica se o oponente esquivou
         if (other.evade(sc, this.calcDifficult())) {
             return;
@@ -276,10 +271,12 @@ public class Player extends Creature implements PlayerInterface {
 
         if (critical > 1) {
             System.out.println("Acertou um ataque crítico");
+            Message.enter("");
+            sc.nextLine();
         }
 
         int damage = (this.totalAttack * critical);
-        System.out.println("O dano total é de: " + damage);
+        System.out.println("O dano total foi de: " + damage);
         int newLife = other.getLife() - damage;
         System.out.println("A vida de " + other.getTypeName() + " foi de " + other.getLife() + " para " + newLife);
 
