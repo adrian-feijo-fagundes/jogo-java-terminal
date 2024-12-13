@@ -33,27 +33,26 @@ public class Archer extends Player {
                 name);
 
         this.setSpecialHabilityName("Tiro do Crepúsculo");
-        this.setSpecialHabilityDescription("Uma flecha envolta em energia crepuscular, disparada com precisão letal. Ao atingir o alvo, concentra toda a força em um único ponto, causando dano mediano. Com um custo médio de mana, é uma habilidade equilibrada para ataques à distância.");
+        this.setSpecialHabilityDescription(
+                "Uma flecha envolta em energia crepuscular, disparada com precisão letal. Ao atingir o alvo, concentra toda a força em um único ponto, causando dano mediano. Com um custo médio de mana, é uma habilidade equilibrada para ataques à distância.");
     }
 
     @Override
-    public void useSpecialAbility(Scanner sc,Creature other) {
-            int manaCost = 2;
+    public void useSpecialAbility(Scanner sc, Creature other) {
+        int manaCost = 2;
 
-            if (!hasMana(manaCost)) {
-                System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
-                attack(sc, other);
-                return;
-            }
-            System.out.println("Voce usa " + manaCost + "de mana então ataca com ");
-            System.out.println(this.getSpecialHabilityName());
-            
+        if (!hasMana(manaCost)) {
+            System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
+            attack(sc, other);
+            return;
+        }
+        System.out.println("Voce usa " + manaCost + " de mana então ataca com " + this.getSpecialHabilityName());
 
-            int damage = (this.getTotalAttack() * 2 + 5);
-            System.out.println("O dano total é de: " +  damage);
-            int newLife = other.getLife() -  damage;
-            System.out.println("A vida de " + other.getName() + "foi de " + other.getLife() + " para " + newLife);
-    
-            other.setLife(newLife);
+        int damage = (this.getTotalAttack() * 2 + 5);
+        System.out.println("O dano total é de: " + damage);
+        int newLife = other.getLife() - damage;
+        System.out.println("A vida de " + other.getName() + "foi de " + other.getLife() + " para " + newLife);
+
+        other.setLife(newLife);
     }
 }

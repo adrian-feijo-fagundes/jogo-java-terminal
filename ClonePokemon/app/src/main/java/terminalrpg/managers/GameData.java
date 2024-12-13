@@ -15,7 +15,6 @@ import terminalrpg.entities.itens.Consumable;
 import terminalrpg.entities.itens.Equipable;
 import terminalrpg.entities.itens.Item;
 import terminalrpg.entities.scene.Combat;
-import terminalrpg.entities.scene.Reward;
 import terminalrpg.entities.scene.Scene;
 import terminalrpg.utils.GameState;
 
@@ -37,9 +36,9 @@ public class GameData {
         enemies = new HashMap<>();
         equipables = new HashMap<>();
         initializeEquipables();
-        initializeScenes(); // Método para inicializar as cenas
         initializeItens();
         initializeEnemies();
+        initializeScenes(); // Método para inicializar as cenas
     }
 
     private void initializeEquipables() {
@@ -119,9 +118,16 @@ public class GameData {
                 "Voce olhar ao redor e tem apenas uma porta"
         });
 
-        salaAranha.addMessages(new String[] { "Voce volta o covil parece que não tem mais nada aqui" });
+        salaEsqueleto.addMessages(new String[] { "Voce volta o covil do esqueleto parece que não tem mais nada aqui" });
+
+        salaDragao.addFirstMessages(new String[] {
+                "Voce olhar ao redor e a sala está vazia ela não tem saida"
+        });
+
+        salaDragao.addMessages(new String[] { "Voce volta o covil do dragao parece que não tem mais nada aqui" });
 
         // ---------------------------------
+        saida.addOption(null, inicio);
         inicio.addOption("Abrir a porta e ir para outra sala", salaGoblin);
         inicio.addOption("Tentar sair da masmorra", saida);
 

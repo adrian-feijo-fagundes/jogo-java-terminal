@@ -22,7 +22,7 @@ public class Creature extends Entity implements CreatureInterface {
     private int mana;
     private int totalDefense;
     private int totalSpeed;
-    
+
     public Creature(
             int mana,
             String type,
@@ -32,34 +32,80 @@ public class Creature extends Entity implements CreatureInterface {
             int luck,
             String name) {
         super(name);
-        this.mana       = mana;
-        this.type       = type;
-        this.life       = life;
-        this.attack     = attack;
-        this.speed      = speed;
-        this.luck       = luck;
-        totalDefense    = 0;
-        totalSpeed      = speed;
-       
+        this.mana = mana;
+        this.type = type;
+        this.life = life;
+        this.attack = attack;
+        this.speed = speed;
+        this.luck = luck;
+        totalDefense = 0;
+        totalSpeed = speed;
+
     }
-    
-    public String  getType()             { return type;                         }
-    public String  getTypeName()         { return type + " " + this.getName();  }
-    public int     getMana()             { return mana;                         }
-    public void    setMana(int mana)     { this.mana = mana;                    }
-    public int     getLife()             { return life;                         }
-    public void    setLife(int life)     { this.life = life;                    }
-    public int     getAttack()           { return attack;                       }
-    public void    setAttack(int attack) { this.attack = attack;                }
-    public int     getSpeed()            { return speed;                        }
-    public void    setSpeed(int speed)   { this.speed = speed;                  }
-    public int     getLuck()             { return luck;                         }
-    public void    setLuck(int luck)     { this.luck = luck;                    }
-    
-    public int     getTotalDefense()                { return totalDefense;            }
-    public void    setTotalDefense(int defense)     { this.totalDefense = defense;    }
-    public int     getTotalSpeed()                  { return totalSpeed;              }
-    public void    setTotalSpeed(int speed)         { this.totalSpeed = speed;        }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getTypeName() {
+        return type + " " + this.getName();
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getLuck() {
+        return luck;
+    }
+
+    public void setLuck(int luck) {
+        this.luck = luck;
+    }
+
+    public int getTotalDefense() {
+        return totalDefense;
+    }
+
+    public void setTotalDefense(int defense) {
+        this.totalDefense = defense;
+    }
+
+    public int getTotalSpeed() {
+        return totalSpeed;
+    }
+
+    public void setTotalSpeed(int speed) {
+        this.totalSpeed = speed;
+    }
 
     public boolean isDead() {
         return this.getLife() < 0;
@@ -96,27 +142,27 @@ public class Creature extends Entity implements CreatureInterface {
     protected int calcDifficult() {
         return ((int) (this.luck * 0.5)) + ((int) (this.speed * 0.5));
     }
- 
+
     @Override
     public void attack(Scanner sc, Creature other) {
-        System.out.println(this.getTypeName() + "Começou a atacar!\n");
+        System.out.println(this.getTypeName() + " Começou a atacar!\n");
         // Verifica se o oponente esquivou
-        if (other.evade(sc ,this.calcDifficult())) {
+        if (other.evade(sc, this.calcDifficult())) {
             return;
         }
         int critical = this.criticalHit(sc);
-        
+
         if (critical > 1) {
             System.out.println("Acertou um ataque crítico");
         }
 
         int damage = (this.attack * critical) - other.getTotalDefense();
-        System.out.println("O dano total é de: " +  damage);
-        int newLife = other.getLife() -  damage;
+        System.out.println("O dano total é de: " + damage);
+        int newLife = other.getLife() - damage;
         System.out.println("A vida de " + other.getTypeName() + " foi de " + other.getLife() + " para " + newLife);
 
         other.setLife(newLife);
-        
+
     }
 
 }

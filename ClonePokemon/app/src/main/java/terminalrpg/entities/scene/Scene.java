@@ -36,34 +36,55 @@ public class Scene extends Entity {
         this.neededItem = "";
     }
 
-    public String       getNeededItem()                         { return neededItem;                                                      }
-    public void         setNeededItem(String neededItem)        { this.neededItem = neededItem;                                           }
-    public String       getNeededItemMessage()                  { return neededItemMessage;                                               }
-    public void         setNeededItemMessage(String neededItem) { this.neededItem = neededItemMessage;                                    }
-    public List<Option> getOptions()                            { return options;                                                         }
-    public Scene        getLastScene()                          { return this.getOptions().get(this.getOptions().size() - 1).nextScene(); }
-    
+    public String getNeededItem() {
+        return neededItem;
+    }
+
+    public void setNeededItem(String neededItem) {
+        this.neededItem = neededItem;
+    }
+
+    public String getNeededItemMessage() {
+        return neededItemMessage;
+    }
+
+    public void setNeededItemMessage(String neededItem) {
+        this.neededItemMessage = neededItem;
+    }
+
+    public List<Option> getOptions() {
+        return options;
+    }
+
+    public Scene getLastScene() {
+        return this.getOptions().get(this.getOptions().size() - 1).nextScene();
+    }
+
     public void addOption(String optionDescription, Scene nextScene) {
         this.options.add(new Option(optionDescription, nextScene));
     }
+
     public void addMessages(String[] newMessages) {
         this.messages.addAll(Arrays.asList(newMessages));
     }
+
     public boolean isFirstVisit(GameState gameState) {
         return !gameState.hasVisited(this.getId());
     }
+
     public void addFirstMessages(String[] newFirstMessages) {
         this.firstMessages.addAll(Arrays.asList(newFirstMessages));
     }
+
     public List<String> currentMessages(boolean isFirstVisit) {
         return isFirstVisit ? this.firstMessages : this.messages;
     }
 
     public void showMessages(Scanner sc, List<String> currentMessages) {
         for (int i = 0; i < currentMessages.size(); i++) {
-                System.out.println(currentMessages.get(i) + "\n");
-                Message.enter("");
-                sc.nextLine();// Aguarda o jogador pressionar Enter
+            System.out.println(currentMessages.get(i) + "\n");
+            Message.enter("");
+            sc.nextLine();// Aguarda o jogador pressionar Enter
 
         }
     }
@@ -75,8 +96,8 @@ public class Scene extends Entity {
         return null != player.getItem(this.neededItem);
     }
 
-    public Scene showOptions(Scanner sc, PlayerManager playerManager, List<String> currentMessages ) {
-        if (!this.options.isEmpty()) { 
+    public Scene showOptions(Scanner sc, PlayerManager playerManager, List<String> currentMessages) {
+        if (!this.options.isEmpty()) {
             // Captura e valida a escolha do jogador
             int choice = -1;
             while (true) {
@@ -111,7 +132,7 @@ public class Scene extends Entity {
             sc.nextLine();
             return getLastScene();
         }
- 
+
         showMessages(sc, currentMessages(isFirstVisit(gameState)));
         // Marca a cena como visitada no GameState
         if (isFirstVisit(gameState)) {

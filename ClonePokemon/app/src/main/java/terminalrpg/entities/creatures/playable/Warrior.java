@@ -31,25 +31,25 @@ public class Warrior extends Player {
                 luck + 5,
                 name);
         this.setSpecialHabilityName("Impacto Colossal");
-        this.setSpecialHabilityDescription("O guerreiro concentra toda \nsua força em um único golpe devastador, esmagando o alvo com uma força \ntremenda. O ataque consome uma alta quantidade de mana, mas causa um dano \nmassivo, perfeito para finalizar inimigos poderosos.");
+        this.setSpecialHabilityDescription(
+                "O guerreiro concentra toda \nsua força em um único golpe devastador, esmagando o alvo com uma força \ntremenda. O ataque consome uma alta quantidade de mana, mas causa um dano \nmassivo, perfeito para finalizar inimigos poderosos.");
     }
 
     @Override
-    public void useSpecialAbility( Scanner sc, Creature other) {
-            int manaCost = 5;
+    public void useSpecialAbility(Scanner sc, Creature other) {
+        int manaCost = 5;
 
-            if (!hasMana(manaCost)) {
-                System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
-                attack(sc ,other);
-                return;
-            }
-            System.out.println("Voce usa " + manaCost + "de mana então ataca com ");
-            System.out.println(this.getSpecialHabilityName());
-            int damage = (this.getTotalAttack() * 3);
-            System.out.println("O dano total é de: " +  damage);
-            int newLife = other.getLife() -  damage;
-            System.out.println("A vida de " + other.getName() + "foi de " + other.getLife() + " para " + newLife);
-    
-            other.setLife(newLife);
+        if (!hasMana(manaCost)) {
+            System.out.println(" Voce não tem mana suficiente, então realiza um ataque normal ");
+            attack(sc, other);
+            return;
+        }
+        System.out.println("Voce usa " + manaCost + " de mana então ataca com " + this.getSpecialHabilityName());
+        int damage = (this.getTotalAttack() * 3);
+        System.out.println("O dano total é de: " + damage);
+        int newLife = other.getLife() - damage;
+        System.out.println("A vida de " + other.getName() + " foi de " + other.getLife() + " para " + newLife);
+
+        other.setLife(newLife);
     }
 }

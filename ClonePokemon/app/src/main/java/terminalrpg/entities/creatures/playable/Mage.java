@@ -32,29 +32,29 @@ public class Mage extends Player {
                 luck + 10,
                 name);
         this.setSpecialHabilityName("Explosão Arcana");
-        this.setSpecialHabilityDescription("Uma rajada de pura energia \narcana, liberada diretamente no alvo. O ataque causa dano mediano com um \ncusto baixo de mana, sendo uma habilidade confiável e eficiente para \nconjuradores em combate.");
+        this.setSpecialHabilityDescription(
+                "Uma rajada de pura energia \narcana, liberada diretamente no alvo. O ataque causa dano mediano com um \ncusto baixo de mana, sendo uma habilidade confiável e eficiente para \nconjuradores em combate.");
     }
 
     @Override
     public void useSpecialAbility(Scanner sc, Creature other) {
-            
-            int manaCost = 1;
 
-            if (!hasMana(manaCost)) {
-                System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
-                attack(sc, other);
-                return;
-            }
-            System.out.println("Voce usa " + manaCost + "de mana então ataca com ");
-            System.out.println(this.getSpecialHabilityName());
-            
+        int manaCost = 1;
 
-            int damage = (this.getTotalAttack() * 2 + 5);
-            System.out.println("O dano total é de: " +  damage);
-            int newLife = other.getLife() -  damage;
-            System.out.println("A vida de " + other.getName() + "foi de " + other.getLife() + " para " + newLife);
-    
-            other.setLife(newLife);
+        if (!hasMana(manaCost)) {
+            System.out.println("Voce não tem mana suficiente, então realiza um ataque normal");
+            attack(sc, other);
+            return;
+        }
+        System.out.println("Voce usa " + manaCost + " de mana então ataca com " + this.getSpecialHabilityName());
+        System.out.println(this.getSpecialHabilityName());
+
+        int damage = (this.getTotalAttack() * 2 + 5);
+        System.out.println("O dano total é de: " + damage);
+        int newLife = other.getLife() - damage;
+        System.out.println("A vida de " + other.getName() + " foi de " + other.getLife() + " para " + newLife);
+
+        other.setLife(newLife);
     }
 
 }

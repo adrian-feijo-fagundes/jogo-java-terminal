@@ -30,8 +30,6 @@ public class Player extends Creature implements PlayerInterface {
     private int totalMana;
     private List<Equipable> equipments;
 
-
-
     public Player(
             int mana,
             String type,
@@ -49,18 +47,26 @@ public class Player extends Creature implements PlayerInterface {
                 speed,
                 luck,
                 name);
-        totalAttack     = attack;
-        totalLuck       = luck;
-        totalMana       = mana;
-        this.equipments  = new ArrayList<>();
+        totalAttack = attack;
+        totalLuck = luck;
+        totalMana = mana;
+        this.equipments = new ArrayList<>();
 
         this.inventory = new ArrayList<>();
         this.consumables = new ArrayList<>();
     }
 
-    public int     getTotalMana()        { return totalMana;                    }
-    public int     getTotalAttack()      { return totalAttack;                  }
-    public int     getTotalLuck()        { return totalLuck;                    }
+    public int getTotalMana() {
+        return totalMana;
+    }
+
+    public int getTotalAttack() {
+        return totalAttack;
+    }
+
+    public int getTotalLuck() {
+        return totalLuck;
+    }
 
     public void setSpecialHabilityDescription(String description) {
         this.specialHabilityDescription = description;
@@ -77,27 +83,29 @@ public class Player extends Creature implements PlayerInterface {
     public String getSpecialHabilityName() {
         return this.specialHabilityName;
     }
+
     public void listEquipments() {
         for (Equipable equipment : this.equipments) {
-            System.out.println(" "+ equipment.getName());
+            System.out.println(" " + equipment.getName());
         }
     }
+
     public boolean hasEquipment() {
         return this.equipments.size() > 0;
     }
+
     public void addEquipment(Equipable equipment) {
         this.equipments.add(equipment);
     }
-    
 
-    public Map <String, Integer> calcBonusStatus() {
+    public Map<String, Integer> calcBonusStatus() {
         int bonusAttack = 0;
         int bonusDefense = 0;
         int bonusMana = 0;
         int bonusSpeed = 0;
         int bonusLuck = 0;
 
-        if (hasEquipment()) {
+        if (!hasEquipment()) {
             for (Equipable equipment : this.equipments) {
                 bonusAttack += equipment.getBonusAttack();
                 bonusDefense += equipment.getBonusDefense();
@@ -119,21 +127,24 @@ public class Player extends Creature implements PlayerInterface {
 
     public void calcTotalStatus() {
         Map<String, Integer> bonusStatus = calcBonusStatus();
-        
+
         totalAttack = this.getAttack() + bonusStatus.get("bATK");
         setTotalDefense(bonusStatus.get("bDEF"));
         totalMana = this.getMana() + bonusStatus.get("bMANA");
         setTotalSpeed(bonusStatus.get("bSPD"));
         totalLuck = this.getLuck() + bonusStatus.get("bLUCK");
     }
+
     public void listInventory() {
         for (Item item : this.inventory) {
             System.out.println(" " + item.getName());
         }
     }
+
     public boolean hasItens() {
         return inventory.size() > 0;
     }
+
     public Item getItem(String name) {
         for (Item item : this.inventory) {
             if (item.getName().equalsIgnoreCase(name)) {
@@ -142,14 +153,17 @@ public class Player extends Creature implements PlayerInterface {
         }
         return null;
     }
+
     public void addConsumable(Consumable item) {
         this.consumables.add(item);
     }
+
     public void listConsumables() {
         for (Consumable item : this.consumables) {
-            System.out.println(" "+ item.getInfo());
+            System.out.println(" " + item.getInfo());
         }
     }
+
     public Consumable getConsumble(String name) {
         for (Consumable item : this.consumables) {
             if (item.getName().equalsIgnoreCase(name)) {
@@ -158,9 +172,11 @@ public class Player extends Creature implements PlayerInterface {
         }
         return null;
     }
+
     public boolean hasConsumables() {
         return consumables.size() > 0;
     }
+
     public void addItem(Item item) {
         this.inventory.add(item);
     }
@@ -168,6 +184,7 @@ public class Player extends Creature implements PlayerInterface {
     public boolean hasMana(int cost) {
         return this.getMana() > cost;
     }
+
     public void clearConsumables() {
         for (Consumable item : this.consumables) {
             if (item.getQuantity() == 0) {
@@ -181,20 +198,20 @@ public class Player extends Creature implements PlayerInterface {
         clearConsumables();
         int choice = -1;
         while (true) {
-                System.out.println("\n Seus Itens ");
-                for (int i = 0; i < this.consumables.size(); i++) {
-                    System.out.printf("%d. %s\n", i + 1, this.consumables.get(i).getInfo());
-                }
-                System.out.print("\nEscolha uma opção: ");
-                choice = sc.nextInt();
+            System.out.println("\n Seus Itens ");
+            for (int i = 0; i < this.consumables.size(); i++) {
+                System.out.printf("%d. %s\n", i + 1, this.consumables.get(i).getInfo());
+            }
+            System.out.print("\nEscolha uma opção: ");
+            choice = sc.nextInt();
 
-                if (choice > 0 && choice <= this.consumables.size()) {
-                    break;
-                } else {
-                    System.out.println("Escolha uma opção válida");
-                }
-        } 
-        this.consumables.get(choice -1).use(this);
+            if (choice > 0 && choice <= this.consumables.size()) {
+                break;
+            } else {
+                System.out.println("Escolha uma opção válida");
+            }
+        }
+        this.consumables.get(choice - 1).use(this);
     }
 
     @Override
@@ -240,28 +257,28 @@ public class Player extends Creature implements PlayerInterface {
         return 1; // Ataque normal
     }
 
-
     @Override
     public void attack(Scanner sc, Creature other) {
         System.out.println(this.getTypeName() + "Começou a atacar!\n");
         // Verifica se o oponente esquivou
-        if (other.evade(sc ,this.calcDifficult())) {
+        if (other.evade(sc, this.calcDifficult())) {
             return;
         }
         int critical = this.criticalHit(sc);
-        
+
         if (critical > 1) {
             System.out.println("Acertou um ataque crítico");
         }
 
         int damage = (this.totalAttack * critical);
-        System.out.println("O dano total é de: " +  damage);
-        int newLife = other.getLife() -  damage;
+        System.out.println("O dano total é de: " + damage);
+        int newLife = other.getLife() - damage;
         System.out.println("A vida de " + other.getTypeName() + " foi de " + other.getLife() + " para " + newLife);
 
         other.setLife(newLife);
-        
+
     }
+
     public void getInfo() {
         Map<String, Integer> bonusStatus = calcBonusStatus();
         calcTotalStatus();
@@ -270,11 +287,15 @@ public class Player extends Creature implements PlayerInterface {
         System.out.println("Tipo: " + this.getType());
         System.out.println("\n------------------------------------------");
         System.out.println(" Vida: " + this.getLife());
-        System.out.println("                     base:   bonus:    total:" );
-        System.out.println(" Ataque                " + this.getAttack() + "       " + bonusStatus.get("bATK")  + "       " + this.getTotalAttack());
-        System.out.println(" Mana                  " + this.getMana()   + "       " + bonusStatus.get("bMANA") + "       " + this.getTotalMana());
-        System.out.println(" Velocidade            " + this.getSpeed()  + "       " + bonusStatus.get("bSPD")  + "       " + this.getTotalSpeed());
-        System.out.println(" Sorte base            " + this.getLuck()   + "       " + bonusStatus.get("bLUCK") + "       " + this.getTotalLuck());
+        System.out.println("                     base:   bonus:    total:");
+        System.out.println(" Ataque                " + this.getAttack() + "       " + bonusStatus.get("bATK")
+                + "       " + this.getTotalAttack());
+        System.out.println(" Mana                  " + this.getMana() + "       " + bonusStatus.get("bMANA") + "       "
+                + this.getTotalMana());
+        System.out.println(" Velocidade            " + this.getSpeed() + "       " + bonusStatus.get("bSPD") + "       "
+                + this.getTotalSpeed());
+        System.out.println(" Sorte base            " + this.getLuck() + "       " + bonusStatus.get("bLUCK") + "       "
+                + this.getTotalLuck());
         System.out.println(" Redução de dano:                       " + this.getTotalDefense());
         System.out.println("------------------------------------------");
         System.out.println(" Habilidade especial: " + this.getSpecialHabilityName());
