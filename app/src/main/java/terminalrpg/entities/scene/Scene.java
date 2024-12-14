@@ -37,8 +37,6 @@ public class Scene extends Entity {
         this.neededItem = "";
     }
 
-
-
     public void setNeededItem(String neededItem) {
         this.neededItem = neededItem;
     }
